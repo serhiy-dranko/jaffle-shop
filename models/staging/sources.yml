@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: jaffle_shop
+    database: jaffle_shop_db
+    schema: raw
+    tables:
+      - name: raw_customers
+        description: "Raw customer records from the test database"
+
+      - name: raw_orders
+        description: "Raw order records from the test database"
+        loaded_at_field: cast(order_date as timestamp)
+        freshness:
+          warn_after: {count: 24, period: hour}
+          error_after: {count: 48, period: hour}
+
+      - name: raw_payments
+        description: "Raw payment records from the test database"
+
+      - name: raw_product_prices_v2
+        description: "Raw product price records from the Mockaroo"

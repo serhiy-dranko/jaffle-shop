@@ -1,0 +1,151 @@
+product_id,product_name,price,valid_from
+1,Desk Organizer Set,29.99,11/24/2025
+2,Whole Wheat Bread,2.49,4/27/2026
+3,Creamy Garlic Mashed Potatoes,3.99,9/11/2025
+4,Diced Tomatoes (canned),1.49,5/19/2026
+5,Ceramic Cookware Set,179.99,1/8/2026
+6,Adjustable Pet Grooming Table,109.99,6/10/2026
+7,Pineapple Coconut Rice Mix,3.99,1/31/2026
+8,Coffee Capsule Dispenser,24.99,8/6/2026
+9,Oven Thermometer,11.99,12/12/2025
+10,Veggie Burger Patties,5.99,9/10/2025
+11,Portable Air Compressor,44.99,11/30/2025
+12,Mini Hand Gesture Drone,29.99,3/28/2026
+13,Tea Infuser Bottle,19.99,1/10/2026
+14,Spicy Thai Noodles,1.99,6/9/2026
+15,Apple Cinnamon Oatmeal,2.89,10/15/2025
+16,Cajun Seasoning,1.99,11/20/2025
+17,Personal Blender,39.99,9/17/2025
+18,Personalized Cutting Board,34.99,10/20/2025
+19,Recipe Book Stand,22.99,4/8/2026
+20,Organic Tomato Ketchup,3.49,6/26/2026
+21,Fruit and Nut Energy Bites,2.99,12/30/2025
+22,Vegetable Medley,2.99,5/9/2026
+23,Vegetarian Pizza,5.49,2/23/2026
+24,Kombucha Drink,3.49,5/16/2026
+25,Smartphone Camera Lens Kit,19.99,10/3/2025
+26,Leek and Potato Soup,3.29,4/3/2026
+27,Cork Yoga Mat,39.99,1/20/2026
+28,Organic Black Bean Burger,4.49,12/11/2025
+29,Vegan Chocolate Cake Mix,4.29,3/23/2026
+30,Reversible Comforter Set,89.99,3/24/2026
+31,Cranberry Almond Biscotti,4.19,2/21/2026
+32,Water Bottle,18.99,3/16/2026
+33,Organic Ramen Noodles,2.89,3/10/2026
+34,Trail Mix (Deluxe),4.59,4/13/2026
+35,Roasted Garlic Pasta Sauce,4.99,8/18/2025
+36,Set of Measuring Spoons,12.99,3/3/2026
+37,Apple Cinnamon Instant Oatmeal,3.49,6/15/2026
+38,Italian Sausage and Peppers,8.99,9/14/2025
+39,Homestyle Beef Stew,7.99,3/27/2026
+40,Face Mask Set,19.99,6/27/2026
+41,Mixed Nuts,5.99,5/20/2026
+42,Spicy Garlic Edamame,3.99,7/1/2026
+43,Scent Diffuser,34.99,8/18/2025
+44,Reusable Produce Bags Set,14.99,10/15/2025
+45,Hand Mixer,29.99,1/12/2026
+46,Whole Grain Cereal,3.49,9/1/2025
+47,Customizable Photo Calendar,19.99,11/30/2025
+48,Granola,4.79,4/30/2026
+49,Frozen Salmon Filets,12.99,3/21/2026
+50,Organic Whole Grain Oats,2.49,10/5/2025
+51,Turmeric Ginger Tea,3.29,9/17/2025
+52,Red Lentil Pasta,3.99,5/13/2026
+53,Mechanical Pencil Set,19.99,5/20/2026
+54,Athletic Sports Bra,24.99,7/2/2026
+55,Ultraviolet Phone Sanitizer,39.99,1/18/2026
+56,Insulated Wine Tote,24.99,7/5/2026
+57,Peanut Butter Pretzel Nuggets,3.29,9/26/2025
+58,Ultraviolet Phone Sanitizer,39.99,10/4/2025
+59,Window Blinds,59.99,2/17/2026
+60,Cranberry Orange Oatmeal,2.49,6/22/2026
+61,Spinach and Cheese Stuffed Shells,5.99,9/12/2025
+62,Organic Granola,5.49,5/12/2026
+63,Vanilla Bean Greek Yogurt,1.99,10/28/2025
+64,Baby Monitor,79.99,8/24/2025
+65,Fall-Themed Table Runner,19.99,11/30/2025
+66,Foam Roller for Muscle Recovery,29.99,9/3/2025
+67,Pomegranate Juice,4.49,4/28/2026
+68,Home Brewing Starter Kit,79.99,9/15/2025
+69,Solar Charger,39.99,3/5/2026
+70,Graphic Print Leggings,29.99,9/2/2025
+71,Biodegradable Trash Bags,12.99,9/28/2025
+72,Maple Syrup,6.99,3/3/2026
+73,Smart Plug,19.99,7/5/2026
+74,Buffalo Wing Sauce,3.99,4/18/2026
+75,Balsamic Fig Dressing,3.79,8/30/2025
+76,USB Wall Charger,19.99,3/16/2026
+77,Couscous,2.49,6/6/2026
+78,Casual Sneakers,39.99,9/16/2025
+79,Raspberry Lemonade Mix,3.99,7/12/2026
+80,Spicy Avocado Salsa,4.49,4/11/2026
+81,Homestyle Chicken Noodle Soup,2.99,5/11/2026
+82,Quinoa Salad,5.99,11/19/2025
+83,Wireless Charging Station,39.99,11/14/2025
+84,High-Quality Yoga Block,12.99,10/30/2025
+85,LED Strip Lights,19.99,9/21/2025
+86,Sliced Ham,5.49,5/27/2026
+87,Chocolate Dipped Fruit,5.99,9/21/2025
+88,Luxury Yoga Mat,39.99,11/19/2025
+89,Italian Sausage and Peppers,8.99,6/17/2026
+90,Folding Table,59.99,4/15/2026
+91,Honey Sriracha Chicken Bites,7.99,3/7/2026
+92,Children's Educational Puzzle,19.99,7/26/2026
+93,Eggs (dozen),2.99,5/18/2026
+94,Savory Mushroom Risotto,6.49,11/5/2025
+95,Wireless Wi-Fi Extender,49.99,2/28/2026
+96,High-Top Leather Boots,99.99,10/23/2025
+97,Jasmine Rice,2.39,4/29/2026
+98,LED Flashlight with Rechargeable Batteries,19.99,9/6/2025
+99,Ginger Snaps,2.79,4/29/2026
+100,Spicy Kimchi,4.79,9/19/2025
+101,Teriyaki Tofu Stir-Fry,7.49,12/6/2025
+102,Savory Trail Mix,4.29,2/6/2026
+103,Elderberry Syrup,11.99,11/2/2025
+104,Cranberry Orange Oatmeal,2.49,8/26/2025
+105,Blue Corn Tortilla Chips,3.49,6/17/2026
+106,Creative Puzzle Game,19.99,10/10/2025
+107,Garlic Butter Shrimp,8.99,8/12/2026
+108,Kids' Craft Supplies Set,24.99,5/7/2026
+109,Microfiber Cleaning Cloths,9.99,5/24/2026
+110,Reusable Snack Bags,14.99,12/9/2025
+111,Peach Halves (canned),2.49,12/19/2025
+112,Vegan Tacos,7.49,1/1/2026
+113,Faux Fur Throw Blanket,39.99,12/3/2025
+114,Organic Brown Sugar,2.49,4/7/2026
+115,Almond Joy Bars,1.29,7/15/2026
+116,Insulated Sport Tumbler,22.99,7/15/2026
+117,Fashionable Fanny Pack,24.99,5/8/2026
+118,Fruit and Nut Medley,5.99,10/21/2025
+119,Almond Flour Cookies,4.99,11/8/2025
+120,Pineapple Teriyaki Chicken Mix,6.99,5/27/2026
+121,Cranberry Almond Cookies,4.29,7/15/2026
+122,Avocado Oil,8.49,2/11/2026
+123,Baking Soda,0.99,12/20/2025
+124,Vegetable Stock,2.49,1/29/2026
+125,First Aid Kit,29.99,2/13/2026
+126,Fashionable Belt Bag,34.99,10/8/2025
+127,Organic Brown Rice Cakes,3.99,10/25/2025
+128,Hibiscus Tea Bags,3.79,8/20/2025
+129,Bamboo Cutting Board Set,34.99,2/26/2026
+130,Stainless Steel Water Bottle,25.99,9/21/2025
+131,Cotton Tote Bag Set,29.99,1/29/2026
+132,Wireless Gaming Headset,89.99,12/8/2025
+133,Folding Backpack Chair,49.99,7/31/2026
+134,Outdoor Portable Fire Pit,149.99,11/24/2025
+135,Stainless Steel Water Pitcher,39.99,8/12/2026
+136,Organic Coconut Oil,8.99,12/22/2025
+137,Snack Container Set,19.99,7/31/2026
+138,Smartphone Projector Kit,24.99,9/23/2025
+139,Whipped Cream Cheese,2.99,12/2/2025
+140,Gluten-Free Pancake Mix,5.99,5/2/2026
+141,Pet Carrier Backpack,39.99,6/21/2026
+142,Thai Basil Fried Rice,5.99,10/3/2025
+143,Protein Powder,44.99,7/28/2026
+144,Sliced Turkey Breast,5.49,9/18/2025
+145,Smashed Avocado with Lime,2.49,3/1/2026
+146,Kale Chips,3.99,6/27/2026
+147,Spinach and Cheese Stuffed Shells,5.99,12/31/2025
+148,Honey Roasted Almonds,4.99,1/26/2026
+149,Portable SSD,129.99,3/4/2026
+150,Ginger Turmeric Latte Mix,5.29,5/13/2026
