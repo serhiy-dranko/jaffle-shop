@@ -1,4 +1,4 @@
-# Jaffle Shop — dbt + Snowflake
+# Jaffle Shop - dbt + Snowflake
  
 A learning project that builds a full analytics pipeline on top of the classic **Jaffle Shop** dataset, using **dbt** for transformation and **Snowflake** as the data warehouse.
  
@@ -23,12 +23,12 @@ Raw CSVs are seeded into Snowflake, then progressively transformed through stagi
 
 ## Progress log
  
-### Day 1 — Foundation
+### Day 1 - Foundation
 - Connected dbt to Snowflake (`dbt debug` passing)
 - Seeded 4 raw tables (`dbt seed`)
 - Declared sources with descriptions and a freshness check
 - Built 3 staging models, verified in Snowflake
-### Day 2 — Intermediate & mart layers
+### Day 2 - Intermediate & mart layers
 - Built `int_orders_joined` (orders + payments, aggregated)
 - Configured folder-level materializations in `dbt_project.yml` (`view` / `ephemeral` / `table`)
 - Built `dim_customers` and `fct_orders`
