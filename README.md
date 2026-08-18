@@ -15,7 +15,8 @@ Raw CSVs are seeded into Snowflake, then progressively transformed through stagi
  
 ## Pipeline overview
 
-<img width="1413" height="706" alt="Screenshot 2026-08-18 140337" src="https://github.com/user-attachments/assets/4726d4ab-8b47-4a1d-b439-37d47e75d478" />
+<img width="1407" height="640" alt="Screenshot 2026-08-18 151749" src="https://github.com/user-attachments/assets/2c7d9546-645a-4ca6-9ae5-768fcbacbc8a" />
+
 
 ## Lineage graph
 
