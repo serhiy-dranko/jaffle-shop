@@ -1,10 +1,13 @@
-Welcome to your new dbt project!
+Welcome to my new dbt project!
 
 ### Using the starter project
 
 Try running the following commands:
 - dbt run
 - dbt test
+
+<img width="1413" height="706" alt="Screenshot 2026-08-18 140337" src="https://github.com/user-attachments/assets/4726d4ab-8b47-4a1d-b439-37d47e75d478" />
+
 
 
 ### Resources:
