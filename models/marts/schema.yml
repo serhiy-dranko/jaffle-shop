@@ -1,0 +1,67 @@
+models:
+  - name: dim_customers
+    description: "One row per customer, with calculated attributes like full name."
+    columns:
+      - name: customer_id
+        description: "Primary key. Unique identifier for a customer."
+        tests:
+          - unique
+          - not_null
+      - name: first_name
+        description: "The customer's first name."
+      - name: last_name
+        description: "The customer's last name."
+      - name: full_name
+        description: "Concatenated first and last name."
+
+  - name: fct_orders
+    description: "One row per order, with total payment amount and customer link."
+    columns:
+      - name: order_id
+        description: "Primary key. Unique identifier for an order."
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: "Foreign key. Links to the customer who placed the order."
+        tests:
+          - relationships:
+              to: ref('dim_customers')
+              field: customer_id
+      - name: order_date
+        description: "The date the order was placed."
+        tests:
+          - not_null
+      - name: total_amount
+        description: "Total payment amount for the order."
+        tests:
+          - not_null
+    
+  - name: practice_jinja
+    description: "A practice model for testing purposes."
+    columns:
+      - name: order_id
+        description: "Primary key. Unique identifier for an order."
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: "Foreign key. Links to the customer who placed the order."
+        tests:
+          - relationships:
+              to: ref('dim_customers')
+              field: customer_id
+      - name: order_date
+        description: "The date the order was placed."
+        tests:
+          - not_null
+      - name: order_status
+        description: "The status of the order."
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['returned', 'completed', 'return_pending', 'shipped', 'placed']
+      - name: total_amount
+        description: "Total payment amount for the order."
+        tests:
+          - not_null

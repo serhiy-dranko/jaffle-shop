@@ -5,7 +5,7 @@ select
     o.order_status,
     sum(p.amount) as total_amount
 
-from {{ ref('stg_orders') }} as o
+from {{ ref('stg_orders') }} as o  -- Builds the DAG (dependency graph)
 left join {{ ref('stg_payments') }} as p
     on o.order_id = p.order_id
 group by 1, 2, 3, 4
