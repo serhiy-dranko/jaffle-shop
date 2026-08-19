@@ -1,15 +1,38 @@
-Welcome to your new dbt project!
+# Jaffle Shop - dbt + Snowflake
+ 
+A learning project that builds a full analytics pipeline on top of the classic **Jaffle Shop** dataset, using **dbt** for transformation and **Snowflake** as the data warehouse.
+ 
+Raw CSVs are seeded into Snowflake, then progressively transformed through staging → intermediate → mart layers, following dbt's standard project structure.
+ 
+---
+ 
+## Tech stack
+ 
+- **Warehouse:** Snowflake
+- **Transformation:** dbt (`dbt-snowflake` adapter, v1.12)
+- **Language:** SQL + Jinja
+---
+ 
+## Pipeline overview
 
-### Using the starter project
-
-Try running the following commands:
-- dbt run
-- dbt test
+<img width="1407" height="640" alt="Screenshot 2026-08-18 151749" src="https://github.com/user-attachments/assets/2c7d9546-645a-4ca6-9ae5-768fcbacbc8a" />
 
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+## Lineage graph
+
+<img width="1354" height="480" alt="Screenshot 2026-08-18 140842" src="https://github.com/user-attachments/assets/848c8573-4922-41aa-8131-ac69c3ecc88d" />
+
+## Progress log
+ 
+### Day 1 - Foundation
+- Connected dbt to Snowflake (`dbt debug` passing)
+- Seeded 4 raw tables (`dbt seed`)
+- Declared sources with descriptions and a freshness check
+- Built 3 staging models, verified in Snowflake
+### Day 2 - Intermediate & mart layers
+- Built `int_orders_joined` (orders + payments, aggregated)
+- Configured folder-level materializations in `dbt_project.yml` (`view` / `ephemeral` / `table`)
+- Built `dim_customers` and `fct_orders`
+- Practiced Jinja: `{% set %}` variables, `{% if %}` blocks driven by `var()`
+- Verified DAG via `dbt docs generate` / `dbt docs serve`
+
