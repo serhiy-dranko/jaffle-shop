@@ -15,12 +15,24 @@ Raw CSVs are seeded into Snowflake, then progressively transformed through stagi
  
 ## Pipeline overview
 
-<img width="1407" height="640" alt="Screenshot 2026-08-18 151749" src="https://github.com/user-attachments/assets/2c7d9546-645a-4ca6-9ae5-768fcbacbc8a" />
-
+![dbt orders pipeline](https://github.com/serhiy-dranko/jaffle-shop/raw/main/screenshots/dbt_orders_pipeline.png)
 
 ## Lineage graph
 
-<img width="1354" height="480" alt="Screenshot 2026-08-18 140842" src="https://github.com/user-attachments/assets/848c8573-4922-41aa-8131-ac69c3ecc88d" />
+![dbt lineage graph](https://github.com/serhiy-dranko/jaffle-shop/raw/main/screenshots/dbt_orders_linage_graph.png)
+
+## Data quality & documentation
+ 
+**Generic tests** (defined in `schema.yml` files) cover:
+- `unique` / `not_null` on primary keys across staging and mart models
+- `accepted_values` on order status columns
+- `relationships` - referential integrity between `fct_orders.customer_id` and `dim_customers.customer_id`
+ 
+**Custom singular tests** (in `tests/`) enforce business rules the generic tests can't express:
+- `assert_total_amount_not_negative` - order totals must never be negative
+- `assert_no_future_order_dates` - orders can't be dated in the future
+
+**Documentation** - every model and key column has a `description`, browsable via the interactive docs site.
 
 ## Progress log
  
@@ -35,4 +47,9 @@ Raw CSVs are seeded into Snowflake, then progressively transformed through stagi
 - Built `dim_customers` and `fct_orders`
 - Practiced Jinja: `{% set %}` variables, `{% if %}` blocks driven by `var()`
 - Verified DAG via `dbt docs generate` / `dbt docs serve`
-
+### Day 3 - Tests, docs, and snapshots
+- Added generic tests (unique, not_null, accepted_values, relationships) across staging and mart models
+- Wrote 2 custom singular tests for business rules not covered by generic tests
+- Added descriptions to models and columns; generated and reviewed the docs lineage graph
+- Built product_prices_snapshot, an SCD Type 2 snapshot tracking product price history over time
+- Verified snapshot history: changing a price and re-running produces a closed old row (dbt_valid_to set) and a new open row
