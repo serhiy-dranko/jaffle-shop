@@ -3,7 +3,7 @@ select
     o.customer_id,
     o.order_date,
     o.order_status,
-    sum(p.amount) as total_amount
+    coalesce(sum(p.amount), 0) as total_amount
 
 from {{ ref('stg_orders') }} as o  -- Builds the DAG (dependency graph)
 left join {{ ref('stg_payments') }} as p

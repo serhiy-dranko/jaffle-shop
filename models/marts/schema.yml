@@ -36,6 +36,9 @@ models:
         description: "Total payment amount for the order."
         tests:
           - not_null
+          - dbt_utils.not_constant
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
     
   - name: practice_jinja
     description: "A practice model for testing purposes."

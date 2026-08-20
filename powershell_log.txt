@@ -1,0 +1,2006 @@
+Powershell
+
+PS C:\Program Files\Snowflake SnowSQL> snowsql -v
+Version: 1.5.1
+PS C:\Program Files\Snowflake SnowSQL> python --version
+Python 3.13.15
+PS C:\Program Files\Snowflake SnowSQL> pip install dbt-snowflake
+Collecting dbt-snowflake
+  Downloading dbt_snowflake-1.12.0-py3-none-any.whl.metadata (3.2 kB)
+Requirement already satisfied: agate in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-snowflake) (1.9.1)
+Collecting certifi<2025.4.26 (from dbt-snowflake)
+  Downloading certifi-2025.1.31-py3-none-any.whl.metadata (2.5 kB)
+Requirement already satisfied: dbt-adapters<2.0,>=1.24.4 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-snowflake) (1.24.5)
+Requirement already satisfied: dbt-common<2.0,>=1.10 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-snowflake) (1.38.0)
+Requirement already satisfied: dbt-core<2.0,>=1.10.0rc0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-snowflake) (1.12.0)
+Collecting snowflake-connector-python<5.0.0,>=4.2.0 (from snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+  Downloading snowflake_connector_python-4.7.2-cp313-cp313-win_amd64.whl.metadata (93 kB)
+Requirement already satisfied: dbt-protos<2.0,>=1.0.291 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-adapters<2.0,>=1.24.4->dbt-snowflake) (1.0.541)
+Requirement already satisfied: mashumaro<3.18,>=3.9 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from mashumaro[msgpack]<3.18,>=3.9->dbt-adapters<2.0,>=1.24.4->dbt-snowflake) (3.17)
+Requirement already satisfied: protobuf<7.0,>=6.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-adapters<2.0,>=1.24.4->dbt-snowflake) (6.33.6)
+Requirement already satisfied: pytz>=2015.7 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-adapters<2.0,>=1.24.4->dbt-snowflake) (2026.3.post1)
+Requirement already satisfied: typing-extensions<5.0,>=4.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-adapters<2.0,>=1.24.4->dbt-snowflake) (4.16.0)
+Requirement already satisfied: Babel>=2.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from agate->dbt-snowflake) (2.18.0)
+Requirement already satisfied: isodate>=0.5.4 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from agate->dbt-snowflake) (0.7.2)
+Requirement already satisfied: leather>=0.3.2 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from agate->dbt-snowflake) (0.4.1)
+Requirement already satisfied: parsedatetime!=2.5,>=2.1 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from agate->dbt-snowflake) (2.6)
+Requirement already satisfied: python-slugify>=1.2.1 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from agate->dbt-snowflake) (8.0.4)
+Requirement already satisfied: pytimeparse>=1.1.5 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from agate->dbt-snowflake) (1.1.8)
+Requirement already satisfied: tzdata>=2023.3 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from agate->dbt-snowflake) (2026.3)
+Requirement already satisfied: colorama<0.5,>=0.3.9 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-common<2.0,>=1.10->dbt-snowflake) (0.4.6)
+Requirement already satisfied: deepdiff<9.0,>=7.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-common<2.0,>=1.10->dbt-snowflake) (8.6.2)
+Requirement already satisfied: jinja2<4,>=3.1.3 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-common<2.0,>=1.10->dbt-snowflake) (3.1.6)
+Requirement already satisfied: jsonschema<5.0,>=4.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-common<2.0,>=1.10->dbt-snowflake) (4.26.0)
+Requirement already satisfied: pathspec<1.1,>=0.9 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-common<2.0,>=1.10->dbt-snowflake) (1.0.4)
+Requirement already satisfied: python-dateutil<3.0,>=2.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-common<2.0,>=1.10->dbt-snowflake) (2.9.0.post0)
+Requirement already satisfied: requests<3.0.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-common<2.0,>=1.10->dbt-snowflake) (2.34.2)
+Requirement already satisfied: click<9.0,>=8.3.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (8.4.2)
+Requirement already satisfied: daff>=1.3.46 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (1.4.2)
+Requirement already satisfied: dbt-core-experimental-parser<3,>=2.0.0a4 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (2.0.0a5)
+Requirement already satisfied: dbt-extractor<=0.6,>=0.5.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (0.6.0)
+Requirement already satisfied: metricflow<1.0,>=0.211.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (0.211.0)
+Requirement already satisfied: networkx<4.0,>=2.3 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (3.6.1)
+Requirement already satisfied: packaging>20.9 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (26.3)
+Requirement already satisfied: pydantic<3 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (2.13.4)
+Requirement already satisfied: python-dotenv>=1.2 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (1.2.2)
+Requirement already satisfied: pyyaml>=6.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (6.0.3)
+Requirement already satisfied: snowplow-tracker<2.0,>=1.0.2 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (1.1.0)
+Requirement already satisfied: sqlparse<0.6.0,>=0.5.5 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (0.5.5)
+Requirement already satisfied: orderly-set<6,>=5.4.1 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from deepdiff<9.0,>=7.0->dbt-common<2.0,>=1.10->dbt-snowflake) (5.5.0)
+Requirement already satisfied: MarkupSafe>=2.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from jinja2<4,>=3.1.3->dbt-common<2.0,>=1.10->dbt-snowflake) (3.0.3)
+Requirement already satisfied: attrs>=22.2.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from jsonschema<5.0,>=4.0->dbt-common<2.0,>=1.10->dbt-snowflake) (26.1.0)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from jsonschema<5.0,>=4.0->dbt-common<2.0,>=1.10->dbt-snowflake) (2025.9.1)
+Requirement already satisfied: referencing>=0.28.4 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from jsonschema<5.0,>=4.0->dbt-common<2.0,>=1.10->dbt-snowflake) (0.37.0)
+Requirement already satisfied: rpds-py>=0.25.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from jsonschema<5.0,>=4.0->dbt-common<2.0,>=1.10->dbt-snowflake) (2026.6.3)
+Requirement already satisfied: msgpack>=0.5.6 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from mashumaro[msgpack]<3.18,>=3.9->dbt-adapters<2.0,>=1.24.4->dbt-snowflake) (1.2.1)
+Requirement already satisfied: importlib-metadata>=4.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from metricflow<1.0,>=0.211.0->dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (9.0.0)
+Requirement already satisfied: more-itertools<11.0,>=10.0.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from metricflow<1.0,>=0.211.0->dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (10.8.0)
+Requirement already satisfied: rapidfuzz<4.0,>=3.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from metricflow<1.0,>=0.211.0->dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (3.14.5)
+Requirement already satisfied: sqlglot>=20.0.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from metricflow<1.0,>=0.211.0->dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (30.15.0)
+Requirement already satisfied: tabulate>=0.8.9 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from metricflow<1.0,>=0.211.0->dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (0.10.0)
+Requirement already satisfied: annotated-types>=0.6.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from pydantic<3->dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (0.8.0)
+Requirement already satisfied: pydantic-core==2.46.4 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from pydantic<3->dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (2.46.4)
+Requirement already satisfied: typing-inspection>=0.4.2 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from pydantic<3->dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (0.4.3)
+Requirement already satisfied: six>=1.5 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from python-dateutil<3.0,>=2.0->dbt-common<2.0,>=1.10->dbt-snowflake) (1.17.0)
+Requirement already satisfied: charset_normalizer<4,>=2 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from requests<3.0.0->dbt-common<2.0,>=1.10->dbt-snowflake) (3.4.9)
+Requirement already satisfied: idna<4,>=2.5 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from requests<3.0.0->dbt-common<2.0,>=1.10->dbt-snowflake) (3.18)
+Requirement already satisfied: urllib3<3,>=1.26 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from requests<3.0.0->dbt-common<2.0,>=1.10->dbt-snowflake) (2.7.0)
+Collecting asn1crypto<2.0.0,>0.24.0 (from snowflake-connector-python<5.0.0,>=4.2.0->snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+  Downloading asn1crypto-1.5.1-py2.py3-none-any.whl.metadata (13 kB)
+Collecting cryptography>=46.0.5 (from snowflake-connector-python<5.0.0,>=4.2.0->snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+  Downloading cryptography-50.0.0-cp311-abi3-win_amd64.whl.metadata (4.3 kB)
+Collecting pyOpenSSL>=24.0.0 (from snowflake-connector-python<5.0.0,>=4.2.0->snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+  Downloading pyopenssl-26.4.0-py3-none-any.whl.metadata (22 kB)
+Collecting pyjwt<3.0.0,>=2.10.1 (from snowflake-connector-python<5.0.0,>=4.2.0->snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+  Downloading pyjwt-2.13.0-py3-none-any.whl.metadata (3.4 kB)
+Collecting filelock<4,>=3.5 (from snowflake-connector-python<5.0.0,>=4.2.0->snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+  Downloading filelock-3.32.3-py3-none-any.whl.metadata (2.0 kB)
+Collecting sortedcontainers>=2.4.0 (from snowflake-connector-python<5.0.0,>=4.2.0->snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+  Downloading sortedcontainers-2.4.0-py2.py3-none-any.whl.metadata (10 kB)
+Collecting platformdirs<5.0.0,>=2.6.0 (from snowflake-connector-python<5.0.0,>=4.2.0->snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+  Downloading platformdirs-4.11.3-py3-none-any.whl.metadata (5.5 kB)
+Collecting tomlkit (from snowflake-connector-python<5.0.0,>=4.2.0->snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+  Downloading tomlkit-0.15.1-py3-none-any.whl.metadata (3.3 kB)
+Collecting boto3>=1.24 (from snowflake-connector-python<5.0.0,>=4.2.0->snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+  Downloading boto3-1.43.72-py3-none-any.whl.metadata (6.6 kB)
+Collecting botocore>=1.24 (from snowflake-connector-python<5.0.0,>=4.2.0->snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+  Downloading botocore-1.43.72-py3-none-any.whl.metadata (5.6 kB)
+Collecting keyring<26.0.0,>=23.1.0 (from snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+  Downloading keyring-25.7.0-py3-none-any.whl.metadata (21 kB)
+Collecting pywin32-ctypes>=0.2.0 (from keyring<26.0.0,>=23.1.0->snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+  Downloading pywin32_ctypes-0.2.3-py3-none-any.whl.metadata (3.9 kB)
+Collecting jaraco.classes (from keyring<26.0.0,>=23.1.0->snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+  Downloading jaraco.classes-3.4.0-py3-none-any.whl.metadata (2.6 kB)
+Collecting jaraco.functools (from keyring<26.0.0,>=23.1.0->snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+  Downloading jaraco_functools-4.6.0-py3-none-any.whl.metadata (2.9 kB)
+Collecting jaraco.context (from keyring<26.0.0,>=23.1.0->snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+  Downloading jaraco_context-6.1.2-py3-none-any.whl.metadata (4.2 kB)
+Collecting jmespath<2.0.0,>=0.7.1 (from boto3>=1.24->snowflake-connector-python<5.0.0,>=4.2.0->snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+  Downloading jmespath-1.1.0-py3-none-any.whl.metadata (7.6 kB)
+Collecting s3transfer<0.20.0,>=0.19.0 (from boto3>=1.24->snowflake-connector-python<5.0.0,>=4.2.0->snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+  Downloading s3transfer-0.19.2-py3-none-any.whl.metadata (1.7 kB)
+Collecting cffi>=2.0.0 (from cryptography>=46.0.5->snowflake-connector-python<5.0.0,>=4.2.0->snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+  Downloading cffi-2.1.1-cp313-cp313-win_amd64.whl.metadata (2.6 kB)
+Collecting pycparser (from cffi>=2.0.0->cryptography>=46.0.5->snowflake-connector-python<5.0.0,>=4.2.0->snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+  Downloading pycparser-3.0-py3-none-any.whl.metadata (8.2 kB)
+Requirement already satisfied: zipp>=3.20 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from importlib-metadata>=4.0->metricflow<1.0,>=0.211.0->dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (4.1.0)
+Requirement already satisfied: text-unidecode>=1.3 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from python-slugify>=1.2.1->agate->dbt-snowflake) (1.3)
+Downloading dbt_snowflake-1.12.0-py3-none-any.whl (86 kB)
+Downloading certifi-2025.1.31-py3-none-any.whl (166 kB)
+Downloading snowflake_connector_python-4.7.2-cp313-cp313-win_amd64.whl (5.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 12.5 MB/s  0:00:00
+Downloading asn1crypto-1.5.1-py2.py3-none-any.whl (105 kB)
+Downloading filelock-3.32.3-py3-none-any.whl (98 kB)
+Downloading platformdirs-4.11.3-py3-none-any.whl (23 kB)
+Downloading pyjwt-2.13.0-py3-none-any.whl (31 kB)
+Downloading keyring-25.7.0-py3-none-any.whl (39 kB)
+Downloading boto3-1.43.72-py3-none-any.whl (140 kB)
+Downloading botocore-1.43.72-py3-none-any.whl (15.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.6/15.6 MB 12.6 MB/s  0:00:01
+Downloading jmespath-1.1.0-py3-none-any.whl (20 kB)
+Downloading s3transfer-0.19.2-py3-none-any.whl (90 kB)
+Downloading cryptography-50.0.0-cp311-abi3-win_amd64.whl (3.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.8/3.8 MB 12.3 MB/s  0:00:00
+Downloading cffi-2.1.1-cp313-cp313-win_amd64.whl (185 kB)
+Downloading pyopenssl-26.4.0-py3-none-any.whl (56 kB)
+Downloading pywin32_ctypes-0.2.3-py3-none-any.whl (30 kB)
+Downloading sortedcontainers-2.4.0-py2.py3-none-any.whl (29 kB)
+Downloading jaraco.classes-3.4.0-py3-none-any.whl (6.8 kB)
+Downloading jaraco_context-6.1.2-py3-none-any.whl (7.9 kB)
+Downloading jaraco_functools-4.6.0-py3-none-any.whl (11 kB)
+Downloading pycparser-3.0-py3-none-any.whl (48 kB)
+Downloading tomlkit-0.15.1-py3-none-any.whl (49 kB)
+Installing collected packages: sortedcontainers, asn1crypto, tomlkit, pywin32-ctypes, pyjwt, pycparser, platformdirs, jmespath, jaraco.functools, jaraco.context, jaraco.classes, filelock, certifi, keyring, cffi, botocore, s3transfer, cryptography, pyOpenSSL, boto3, snowflake-connector-python, dbt-snowflake
+  Attempting uninstall: certifi
+    Found existing installation: certifi 2026.7.22
+    Uninstalling certifi-2026.7.22:
+      Successfully uninstalled certifi-2026.7.22
+Successfully installed asn1crypto-1.5.1 boto3-1.43.72 botocore-1.43.72 certifi-2025.1.31 cffi-2.1.1 cryptography-50.0.0 dbt-snowflake-1.12.0 filelock-3.32.3 jaraco.classes-3.4.0 jaraco.context-6.1.2 jaraco.functools-4.6.0 jmespath-1.1.0 keyring-25.7.0 platformdirs-4.11.3 pyOpenSSL-26.4.0 pycparser-3.0 pyjwt-2.13.0 pywin32-ctypes-0.2.3 s3transfer-0.19.2 snowflake-connector-python-4.7.2 sortedcontainers-2.4.0 tomlkit-0.15.1
+PS C:\Program Files\Snowflake SnowSQL> dbt --version
+Core:
+  - installed: 1.12.0
+  - latest:    1.12.2 - Update available!
+
+  Your version of dbt-core is out of date!
+  You can find instructions for upgrading here:
+  https://docs.getdbt.com/docs/installation
+
+Plugins:
+  - duckdb:    1.11.0 - Up to date!
+  - snowflake: 1.12.0 - Up to date!
+
+C:\Users\User\Documents\Dataskools\jaffle-shop> PS C:\Program Files\Snowflake SnowSQL> snowsql -v
+>> Version: 1.5.1
+>> PS C:\Program Files\Snowflake SnowSQL> python --version
+>> Python 3.13.15
+>> PS C:\Program Files\Snowflake SnowSQL> pip install dbt-snowflake
+>> Collecting dbt-snowflake
+>>   Downloading dbt_snowflake-1.12.0-py3-none-any.whl.metadata (3.2 kB)
+>> Requirement already satisfied: agate in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-snowflake) (1.9.1)
+>> Collecting certifi<2025.4.26 (from dbt-snowflake)
+>>   Downloading certifi-2025.1.31-py3-none-any.whl.metadata (2.5 kB)
+>> Requirement already satisfied: dbt-adapters<2.0,>=1.24.4 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-snowflake) (1.24.5)
+>> Requirement already satisfied: dbt-common<2.0,>=1.10 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-snowflake) (1.38.0)
+>> Requirement already satisfied: dbt-core<2.0,>=1.10.0rc0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-snowflake) (1.12.0)
+>> Collecting snowflake-connector-python<5.0.0,>=4.2.0 (from snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+>>   Downloading snowflake_connector_python-4.7.2-cp313-cp313-win_amd64.whl.metadata (93 kB)
+>> Requirement already satisfied: dbt-protos<2.0,>=1.0.291 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-adapters<2.0,>=1.24.4->dbt-snowflake) (1.0.541)
+>> Requirement already satisfied: mashumaro<3.18,>=3.9 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from mashumaro[msgpack]<3.18,>=3.9->dbt-adapters<2.0,>=1.24.4->dbt-snowflake) (3.17)
+>> Requirement already satisfied: protobuf<7.0,>=6.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-adapters<2.0,>=1.24.4->dbt-snowflake) (6.33.6)
+>> Requirement already satisfied: pytz>=2015.7 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-adapters<2.0,>=1.24.4->dbt-snowflake) (2026.3.post1)
+>> Requirement already satisfied: typing-extensions<5.0,>=4.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-adapters<2.0,>=1.24.4->dbt-snowflake) (4.16.0)
+>> Requirement already satisfied: Babel>=2.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from agate->dbt-snowflake) (2.18.0)
+>> Requirement already satisfied: isodate>=0.5.4 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from agate->dbt-snowflake) (0.7.2)
+>> Requirement already satisfied: leather>=0.3.2 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from agate->dbt-snowflake) (0.4.1)
+>> Requirement already satisfied: parsedatetime!=2.5,>=2.1 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from agate->dbt-snowflake) (2.6)
+>> Requirement already satisfied: python-slugify>=1.2.1 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from agate->dbt-snowflake) (8.0.4)
+>> Requirement already satisfied: pytimeparse>=1.1.5 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from agate->dbt-snowflake) (1.1.8)
+>> Requirement already satisfied: tzdata>=2023.3 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from agate->dbt-snowflake) (2026.3)
+>> Requirement already satisfied: colorama<0.5,>=0.3.9 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-common<2.0,>=1.10->dbt-snowflake) (0.4.6)
+>> Requirement already satisfied: deepdiff<9.0,>=7.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-common<2.0,>=1.10->dbt-snowflake) (8.6.2)
+>> Requirement already satisfied: jinja2<4,>=3.1.3 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-common<2.0,>=1.10->dbt-snowflake) (3.1.6)
+>> Requirement already satisfied: jsonschema<5.0,>=4.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-common<2.0,>=1.10->dbt-snowflake) (4.26.0)
+>> Requirement already satisfied: pathspec<1.1,>=0.9 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-common<2.0,>=1.10->dbt-snowflake) (1.0.4)
+>> Requirement already satisfied: python-dateutil<3.0,>=2.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-common<2.0,>=1.10->dbt-snowflake) (2.9.0.post0)
+>> Requirement already satisfied: requests<3.0.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-common<2.0,>=1.10->dbt-snowflake) (2.34.2)
+>> Requirement already satisfied: click<9.0,>=8.3.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (8.4.2)
+>> Requirement already satisfied: daff>=1.3.46 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (1.4.2)
+>> Requirement already satisfied: dbt-core-experimental-parser<3,>=2.0.0a4 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (2.0.0a5)
+>> Requirement already satisfied: dbt-extractor<=0.6,>=0.5.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (0.6.0)
+>> Requirement already satisfied: metricflow<1.0,>=0.211.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (0.211.0)
+>> Requirement already satisfied: networkx<4.0,>=2.3 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (3.6.1)
+>> Requirement already satisfied: packaging>20.9 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (26.3)
+>> Requirement already satisfied: pydantic<3 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (2.13.4)
+>> Requirement already satisfied: python-dotenv>=1.2 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (1.2.2)
+>> Requirement already satisfied: pyyaml>=6.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (6.0.3)
+>> Requirement already satisfied: snowplow-tracker<2.0,>=1.0.2 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (1.1.0)
+>> Requirement already satisfied: sqlparse<0.6.0,>=0.5.5 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (0.5.5)
+>> Requirement already satisfied: orderly-set<6,>=5.4.1 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from deepdiff<9.0,>=7.0->dbt-common<2.0,>=1.10->dbt-snowflake) (5.5.0)
+>> Requirement already satisfied: MarkupSafe>=2.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from jinja2<4,>=3.1.3->dbt-common<2.0,>=1.10->dbt-snowflake) (3.0.3)
+>> Requirement already satisfied: attrs>=22.2.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from jsonschema<5.0,>=4.0->dbt-common<2.0,>=1.10->dbt-snowflake) (26.1.0)
+>> Requirement already satisfied: jsonschema-specifications>=2023.03.6 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from jsonschema<5.0,>=4.0->dbt-common<2.0,>=1.10->dbt-snowflake) (2025.9.1)
+>> Requirement already satisfied: referencing>=0.28.4 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from jsonschema<5.0,>=4.0->dbt-common<2.0,>=1.10->dbt-snowflake) (0.37.0)
+>> Requirement already satisfied: rpds-py>=0.25.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from jsonschema<5.0,>=4.0->dbt-common<2.0,>=1.10->dbt-snowflake) (2026.6.3)
+>> Requirement already satisfied: msgpack>=0.5.6 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from mashumaro[msgpack]<3.18,>=3.9->dbt-adapters<2.0,>=1.24.4->dbt-snowflake) (1.2.1)
+>> Requirement already satisfied: importlib-metadata>=4.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from metricflow<1.0,>=0.211.0->dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (9.0.0)
+>> Requirement already satisfied: more-itertools<11.0,>=10.0.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from metricflow<1.0,>=0.211.0->dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (10.8.0)
+>> Requirement already satisfied: rapidfuzz<4.0,>=3.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from metricflow<1.0,>=0.211.0->dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (3.14.5)
+>> Requirement already satisfied: sqlglot>=20.0.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from metricflow<1.0,>=0.211.0->dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (30.15.0)
+>> Requirement already satisfied: tabulate>=0.8.9 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from metricflow<1.0,>=0.211.0->dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (0.10.0)
+>> Requirement already satisfied: annotated-types>=0.6.0 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from pydantic<3->dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (0.8.0)
+>> Requirement already satisfied: pydantic-core==2.46.4 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from pydantic<3->dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (2.46.4)
+>> Requirement already satisfied: typing-inspection>=0.4.2 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from pydantic<3->dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (0.4.3)
+>> Requirement already satisfied: six>=1.5 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from python-dateutil<3.0,>=2.0->dbt-common<2.0,>=1.10->dbt-snowflake) (1.17.0)
+>> Requirement already satisfied: charset_normalizer<4,>=2 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from requests<3.0.0->dbt-common<2.0,>=1.10->dbt-snowflake) (3.4.9)
+>> Requirement already satisfied: idna<4,>=2.5 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from requests<3.0.0->dbt-common<2.0,>=1.10->dbt-snowflake) (3.18)
+>> Requirement already satisfied: urllib3<3,>=1.26 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from requests<3.0.0->dbt-common<2.0,>=1.10->dbt-snowflake) (2.7.0)
+>> Collecting asn1crypto<2.0.0,>0.24.0 (from snowflake-connector-python<5.0.0,>=4.2.0->snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+>>   Downloading asn1crypto-1.5.1-py2.py3-none-any.whl.metadata (13 kB)
+>> Collecting cryptography>=46.0.5 (from snowflake-connector-python<5.0.0,>=4.2.0->snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+>>   Downloading cryptography-50.0.0-cp311-abi3-win_amd64.whl.metadata (4.3 kB)
+>> Collecting pyOpenSSL>=24.0.0 (from snowflake-connector-python<5.0.0,>=4.2.0->snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+>>   Downloading pyopenssl-26.4.0-py3-none-any.whl.metadata (22 kB)
+>> Collecting pyjwt<3.0.0,>=2.10.1 (from snowflake-connector-python<5.0.0,>=4.2.0->snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+>>   Downloading pyjwt-2.13.0-py3-none-any.whl.metadata (3.4 kB)
+>> Collecting filelock<4,>=3.5 (from snowflake-connector-python<5.0.0,>=4.2.0->snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+>>   Downloading filelock-3.32.3-py3-none-any.whl.metadata (2.0 kB)
+>> Collecting sortedcontainers>=2.4.0 (from snowflake-connector-python<5.0.0,>=4.2.0->snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+>>   Downloading sortedcontainers-2.4.0-py2.py3-none-any.whl.metadata (10 kB)
+>> Collecting platformdirs<5.0.0,>=2.6.0 (from snowflake-connector-python<5.0.0,>=4.2.0->snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+>>   Downloading platformdirs-4.11.3-py3-none-any.whl.metadata (5.5 kB)
+>> Collecting tomlkit (from snowflake-connector-python<5.0.0,>=4.2.0->snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+>>   Downloading tomlkit-0.15.1-py3-none-any.whl.metadata (3.3 kB)
+>> Collecting boto3>=1.24 (from snowflake-connector-python<5.0.0,>=4.2.0->snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+>>   Downloading boto3-1.43.72-py3-none-any.whl.metadata (6.6 kB)
+>> Collecting botocore>=1.24 (from snowflake-connector-python<5.0.0,>=4.2.0->snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+>>   Downloading botocore-1.43.72-py3-none-any.whl.metadata (5.6 kB)
+>> Collecting keyring<26.0.0,>=23.1.0 (from snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+>>   Downloading keyring-25.7.0-py3-none-any.whl.metadata (21 kB)
+>> Collecting pywin32-ctypes>=0.2.0 (from keyring<26.0.0,>=23.1.0->snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+>>   Downloading pywin32_ctypes-0.2.3-py3-none-any.whl.metadata (3.9 kB)
+>> Collecting jaraco.classes (from keyring<26.0.0,>=23.1.0->snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+>>   Downloading jaraco.classes-3.4.0-py3-none-any.whl.metadata (2.6 kB)
+>> Collecting jaraco.functools (from keyring<26.0.0,>=23.1.0->snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+>>   Downloading jaraco_functools-4.6.0-py3-none-any.whl.metadata (2.9 kB)
+>> Collecting jaraco.context (from keyring<26.0.0,>=23.1.0->snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+>>   Downloading jaraco_context-6.1.2-py3-none-any.whl.metadata (4.2 kB)
+>> Collecting jmespath<2.0.0,>=0.7.1 (from boto3>=1.24->snowflake-connector-python<5.0.0,>=4.2.0->snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+>>   Downloading jmespath-1.1.0-py3-none-any.whl.metadata (7.6 kB)
+>> Collecting s3transfer<0.20.0,>=0.19.0 (from boto3>=1.24->snowflake-connector-python<5.0.0,>=4.2.0->snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+>>   Downloading s3transfer-0.19.2-py3-none-any.whl.metadata (1.7 kB)
+>> Collecting cffi>=2.0.0 (from cryptography>=46.0.5->snowflake-connector-python<5.0.0,>=4.2.0->snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+>>   Downloading cffi-2.1.1-cp313-cp313-win_amd64.whl.metadata (2.6 kB)
+>> Collecting pycparser (from cffi>=2.0.0->cryptography>=46.0.5->snowflake-connector-python<5.0.0,>=4.2.0->snowflake-connector-python[secure-local-storage]<5.0.0,>=4.2.0->dbt-snowflake)
+>>   Downloading pycparser-3.0-py3-none-any.whl.metadata (8.2 kB)
+>> Requirement already satisfied: zipp>=3.20 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from importlib-metadata>=4.0->metricflow<1.0,>=0.211.0->dbt-core<2.0,>=1.10.0rc0->dbt-snowflake) (4.1.0)
+>> Requirement already satisfied: text-unidecode>=1.3 in C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages (from python-slugify>=1.2.1->agate->dbt-snowflake) (1.3)
+>> Downloading dbt_snowflake-1.12.0-py3-none-any.whl (86 kB)
+>> Downloading certifi-2025.1.31-py3-none-any.whl (166 kB)
+>> Downloading snowflake_connector_python-4.7.2-cp313-cp313-win_amd64.whl (5.4 MB)
+>>    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 12.5 MB/s  0:00:00
+>> Downloading asn1crypto-1.5.1-py2.py3-none-any.whl (105 kB)
+>> Downloading filelock-3.32.3-py3-none-any.whl (98 kB)
+>> Downloading platformdirs-4.11.3-py3-none-any.whl (23 kB)
+>> Downloading pyjwt-2.13.0-py3-none-any.whl (31 kB)
+>> Downloading keyring-25.7.0-py3-none-any.whl (39 kB)
+>> Downloading boto3-1.43.72-py3-none-any.whl (140 kB)
+>> Downloading botocore-1.43.72-py3-none-any.whl (15.6 MB)
+>>    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.6/15.6 MB 12.6 MB/s  0:00:01
+>> Downloading jmespath-1.1.0-py3-none-any.whl (20 kB)
+>> Downloading s3transfer-0.19.2-py3-none-any.whl (90 kB)
+>> Downloading cryptography-50.0.0-cp311-abi3-win_amd64.whl (3.8 MB)
+>>    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.8/3.8 MB 12.3 MB/s  0:00:00
+>> Downloading cffi-2.1.1-cp313-cp313-win_amd64.whl (185 kB)
+>> Downloading pyopenssl-26.4.0-py3-none-any.whl (56 kB)
+>> Downloading pywin32_ctypes-0.2.3-py3-none-any.whl (30 kB)
+>> Downloading sortedcontainers-2.4.0-py2.py3-none-any.whl (29 kB)
+>> Downloading jaraco.classes-3.4.0-py3-none-any.whl (6.8 kB)
+>> Downloading jaraco_context-6.1.2-py3-none-any.whl (7.9 kB)
+>> Downloading jaraco_functools-4.6.0-py3-none-any.whl (11 kB)
+>> Downloading pycparser-3.0-py3-none-any.whl (48 kB)
+>> Downloading tomlkit-0.15.1-py3-none-any.whl (49 kB)
+>> Installing collected packages: sortedcontainers, asn1crypto, tomlkit, pywin32-ctypes, pyjwt, pycparser, platformdirs, jmespath, jaraco.functools, jaraco.context, jaraco.classes, filelock, certifi, keyring, cffi, botocore, s3transfer, cryptography, pyOpenSSL, boto3, snowflake-connector-python, dbt-snowflake
+>>   Attempting uninstall: certifi
+>>     Found existing installation: certifi 2026.7.22
+>>     Uninstalling certifi-2026.7.22:
+>>       Successfully uninstalled certifi-2026.7.22
+>> Successfully installed asn1crypto-1.5.1 boto3-1.43.72 botocore-1.43.72 certifi-2025.1.31 cffi-2.1.1 cryptography-50.0.0 dbt-snowflake-1.12.0 filelock-3.32.3 jaraco.classes-3.4.0 jaraco.context-6.1.2 jaraco.functools-4.6.0 jmespath-1.1.0 keyring-25.7.0 platformdirs-4.11.3 pyOpenSSL-26.4.0 pycparser-3.0 pyjwt-2.13.0 pywin32-ctypes-0.2.3 s3transfer-0.19.2 snowflake-connector-python-4.7.2 sortedcontainers-2.4.0 tomlkit-0.15.1
+>> PS C:\Program Files\Snowflake SnowSQL> dbt --version
+>> Core:
+>>   - installed: 1.12.0
+>>   - latest:    1.12.2 - Update available!
+>> 
+>>   Your version of dbt-core is out of date!
+>>   You can find instructions for upgrading here:
+>>   https://docs.getdbt.com/docs/installation
+>> 
+>> Plugins:
+>>   - duckdb:    1.11.0 - Up to date!
+>>   - snowflake: 1.12.0 - Up to date!
+>> 
+PS C:\Users\User\Documents\Dataskools\jaffle-shop> dbt init jaffle_shop_dbt
+08:56:45  Running with dbt=1.12.0
+08:56:45  Setting up your profile.
+Which database would you like to use?
+[1] duckdb
+[2] snowflake
+
+(Don't see the one you want? https://docs.getdbt.com/docs/available-adapters)
+
+Enter a number: 2
+account (https://<this_value>.snowflakecomputing.com): cxesscb-rj97039
+user (dev username): drankoserhiy
+[1] password
+[2] keypair
+[3] sso
+[4] workload_identity
+Desired authentication type option (enter a number): 1
+password (dev password): 
+role (dev role): 
+
+
+                 ACCOUNTADMIN
+warehouse (warehouse name): COMPUTE_WH
+database (default database that dbt will build objects in): jaffle_shop_db
+schema (default schema that dbt will build objects in): raw
+threads (1 or more) [1]: 
+09:06:26  Profile jaffle_shop_dbt written to C:\Users\User\.dbt\profiles.yml using target's profile_template.yml and your supplied values.
+09:06:26  Running dbt debug to validate the project...
+09:06:26  dbt version: 1.12.0
+09:06:26  python version: 3.13.15
+09:06:26  python path: C:\Users\User\AppData\Local\Programs\Python\Python313\python.exe
+09:06:26  os info: Windows-11-10.0.26200-SP0
+09:06:26  Using profiles dir at C:\Users\User\.dbt
+09:06:26  Using profiles.yml file at C:\Users\User\.dbt\profiles.yml
+09:06:26  Using dbt_project.yml file at C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt\dbt_project.yml
+09:06:26  adapter type: snowflake
+09:06:26  adapter version: 1.12.0
+09:06:26  Configuration:
+09:06:26    profiles.yml file [OK found and valid]
+09:06:26    dbt_project.yml file [OK found and valid]
+09:06:26  Required dependencies:
+09:06:26   - git [OK found]
+
+09:06:26  Connection:
+09:06:26    account: cxesscb-rj97039
+09:06:26    user: drankoserhiy
+09:06:26    database: jaffle_shop_db
+09:06:26    warehouse: COMPUTE_WH
+09:06:26    role: ACCOUNTADMIN
+09:06:26    schema: raw
+09:06:26    authenticator: None
+09:06:26    oauth_client_id: None
+09:06:26    query_tag: None
+09:06:26    client_session_keep_alive: False
+09:06:26    host: None
+09:06:26    port: None
+09:06:26    proxy_host: None
+09:06:26    proxy_port: None
+09:06:26    protocol: None
+09:06:26    connect_retries: 1
+09:06:26    connect_timeout: None
+09:06:26    retry_on_database_errors: False
+09:06:26    retry_all: False
+09:06:26    insecure_mode: False
+09:06:26    reuse_connections: True
+09:06:26    s3_stage_vpce_dns_name: None
+09:06:26    workload_identity_provider: None
+09:06:26    workload_identity_entra_resource: None
+09:06:26    platform_detection_timeout_seconds: 0.0
+09:06:26  Registered adapter: snowflake=1.12.0
+09:06:28    Connection test: [ERROR]
+
+09:06:28  1 check failed:
+09:06:28  dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  390100 (28000): Failed to connect to DB: cxesscb-rj97039.snowflakecomputing.com:443. Incorrect username or password was specified. [7b86cab9-2239-4baf-b419-b0ec1ee40d57]
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+09:06:28  Your new dbt project "jaffle_shop_dbt" was created!
+Initialized new project in C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt\jaffle_shop_dbt
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+09:06:28  Your profile may need adjustments. You can find the logs of `dbt debug` above
+PS C:\Users\User\Documents\Dataskools\jaffle-shop> cd C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt debug
+09:11:03  Running with dbt=1.12.0
+09:11:03  dbt version: 1.12.0
+09:11:03  python version: 3.13.15
+09:11:03  python path: C:\Users\User\AppData\Local\Programs\Python\Python313\python.exe
+09:11:03  os info: Windows-11-10.0.26200-SP0
+09:11:04  Using profiles dir at C:\Users\User\.dbt
+09:11:04  Using profiles.yml file at C:\Users\User\.dbt\profiles.yml
+09:11:04  Using dbt_project.yml file at C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt\dbt_project.yml
+09:11:04  adapter type: snowflake
+09:11:04  adapter version: 1.12.0
+09:11:04  Configuration:
+09:11:04    profiles.yml file [OK found and valid]
+09:11:04    dbt_project.yml file [OK found and valid]
+09:11:04  Required dependencies:
+09:11:04   - git [OK found]
+
+09:11:04  Connection:
+09:11:04    account: cxesscb-rj97039
+09:11:04    user: drankoserhiy
+09:11:04    database: jaffle_shop_db
+09:11:04    warehouse: COMPUTE_WH
+09:11:04    role: None
+09:11:04    schema: raw
+09:11:04    authenticator: None
+09:11:04    oauth_client_id: None
+09:11:04    query_tag: None
+09:11:04    client_session_keep_alive: False
+09:11:04    host: None
+09:11:04    port: None
+09:11:04    proxy_host: None
+09:11:04    proxy_port: None
+09:11:04    protocol: None
+09:11:04    connect_retries: 1
+09:11:04    connect_timeout: None
+09:11:04    retry_on_database_errors: False
+09:11:04    retry_all: False
+09:11:04    insecure_mode: False
+09:11:04    reuse_connections: True
+09:11:04    s3_stage_vpce_dns_name: None
+09:11:04    workload_identity_provider: None
+09:11:04    workload_identity_entra_resource: None
+09:11:04    platform_detection_timeout_seconds: 0.0
+09:11:04  Registered adapter: snowflake=1.12.0
+09:11:05    Connection test: [OK connection ok]
+
+09:11:05  All checks passed!
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt debug
+09:12:36  Running with dbt=1.12.0
+09:12:36  dbt version: 1.12.0
+09:12:36  python version: 3.13.15
+09:12:36  python path: C:\Users\User\AppData\Local\Programs\Python\Python313\python.exe
+09:12:36  os info: Windows-11-10.0.26200-SP0
+09:12:37  Using profiles dir at C:\Users\User\.dbt
+09:12:37  Using profiles.yml file at C:\Users\User\.dbt\profiles.yml
+09:12:37  Using dbt_project.yml file at C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt\dbt_project.yml
+09:12:37  adapter type: snowflake
+09:12:37  adapter version: 1.12.0
+09:12:37  Configuration:
+09:12:37    profiles.yml file [OK found and valid]
+09:12:37    dbt_project.yml file [OK found and valid]
+09:12:37  Required dependencies:
+09:12:37   - git [OK found]
+
+09:12:37  Connection:
+09:12:37    account: cxesscb-rj97039
+09:12:37    user: drankoserhiy
+09:12:37    database: jaffle_shop_db
+09:12:37    warehouse: COMPUTE_WH
+09:12:37    role: ACCOUNTADMIN
+09:12:37    schema: raw
+09:12:37    authenticator: None
+09:12:37    oauth_client_id: None
+09:12:37    query_tag: None
+09:12:37    client_session_keep_alive: False
+09:12:37    host: None
+09:12:37    port: None
+09:12:37    proxy_host: None
+09:12:37    proxy_port: None
+09:12:37    protocol: None
+09:12:37    connect_retries: 1
+09:12:37    connect_timeout: None
+09:12:37    retry_on_database_errors: False
+09:12:37    retry_all: False
+09:12:37    insecure_mode: False
+09:12:37    reuse_connections: True
+09:12:37    s3_stage_vpce_dns_name: None
+09:12:37    workload_identity_provider: None
+09:12:37    workload_identity_entra_resource: None
+09:12:37    platform_detection_timeout_seconds: 0.0
+09:12:37  Registered adapter: snowflake=1.12.0
+09:12:38    Connection test: [OK connection ok]
+
+09:12:38  All checks passed!
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> 
+ C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt seed
+09:20:24  Running with dbt=1.12.0
+09:20:25  Registered adapter: snowflake=1.12.0
+09:20:25  Unable to do partial parsing because saved manifest not found. Starting full parse.
+09:20:30  Found 2 models, 4 seeds, 4 data tests, 545 macros
+09:20:30  
+09:20:30  Concurrency: 1 threads (target='dev')
+09:20:30  
+09:20:32  1 of 4 START seed file raw.raw_customers ....................................... [RUN]
+09:20:35  1 of 4 OK loaded seed file raw.raw_customers ................................... [INSERT 100 in 2.37s]
+09:20:35  2 of 4 START seed file raw.raw_orders .......................................... [RUN]
+09:20:36  2 of 4 OK loaded seed file raw.raw_orders ...................................... [INSERT 99 in 1.21s]
+09:20:36  3 of 4 START seed file raw.raw_payments ........................................ [RUN]
+09:20:37  3 of 4 OK loaded seed file raw.raw_payments .................................... [INSERT 113 in 1.12s]
+09:20:37  4 of 4 START seed file raw.raw_product_prices_v2 ............................... [RUN]
+09:20:38  4 of 4 OK loaded seed file raw.raw_product_prices_v2 ........................... [INSERT 150 in 1.33s]
+09:20:39  
+09:20:39  Finished running 4 seeds in 0 hours 0 minutes and 8.62 seconds (8.62s).
+09:20:39  
+09:20:39  Completed successfully
+09:20:39  
+09:20:39  Done. PASS=4 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=4
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> 
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt run                                                                  
+09:47:57  Running with dbt=1.12.0   
+09:47:57  Registered adapter: snowflake=1.12.0   
+09:47:58  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:                       
+- models.jaffle_shop_dbt.example
+09:47:58  Found 4 seeds, 3 models, 4 sources, 545 macros
+09:47:58     
+09:47:58  Concurrency: 1 threads (target='dev')                                                    
+09:47:58                                                                                                           
+09:47:59  1 of 3 START sql view model raw.stg_customers .................................. [RUN]   
+09:48:00  1 of 3 OK created sql view model raw.stg_customers ............................. [SUCCESS 1 in 0.60s]   
+09:48:00  2 of 3 START sql view model raw.stg_orders ..................................... [RUN]   
+09:48:00  2 of 3 OK created sql view model raw.stg_orders ................................ [SUCCESS 1 in 0.31s]    
+09:48:00  3 of 3 START sql view model raw.stg_payments ................................... [RUN]   
+09:48:01  3 of 3 OK created sql view model raw.stg_payments .............................. [SUCCESS 1 in 0.54s]    
+09:48:01     
+09:48:01  Finished running 3 view models in 0 hours 0 minutes and 3.25 seconds (3.25s).
+09:48:01     
+09:48:01  Completed successfully   
+09:48:01     
+09:48:01  Done. PASS=3 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=3   
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt>    
+11:01:50  1 of 3 OK created sql view model raw.stg_customers ............................. [SUCCESS 1 in 0.94s]
+11:01:50  2 of 3 START sql view model raw.stg_orders ..................................... [RUN]
+11:01:50  2 of 3 OK created sql view model raw.stg_orders ................................ [SUCCESS 1 in 0.69s]
+11:01:50  3 of 3 START sql view model raw.stg_payments ................................... [RUN]
+11:01:51  3 of 3 OK created sql view model raw.stg_payments .............................. [SUCCESS 1 in 0.51s]
+11:01:52  
+11:01:52  Finished running 3 view models in 0 hours 0 minutes and 6.00 seconds (6.00s).
+11:01:52  
+11:01:52  Completed successfully
+11:01:52  
+11:01:52  Done. PASS=3 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=3
+11:11:06  1 of 1 START freshness of jaffle_shop.raw_orders ............................... [RUN]
+11:11:07  1 of 1 ERROR freshness of jaffle_shop.raw_orders ............................... [ERROR in 1.48s]
+11:11:08  
+11:11:08  Finished running 1 source in 0 hours 0 minutes and 4.02 seconds (4.02s).
+11:11:08  
+11:11:08    Database Error in source raw_orders (models\staging\sources.yml)
+  Expected a timestamp value when querying field 'last_modified' of table None but received value of type 'date' instead
+11:11:08  Done.
+11:11:08  [WARNING][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- PropertyMovedToConfigDeprecation: 2 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt source freshness
+11:10:50  Running with dbt=1.12.0
+11:10:59  Registered adapter: snowflake=1.12.0
+11:10:59  [WARNING][PropertyMovedToConfigDeprecation]: Deprecated functionality
+Found `freshness` as a top-level property of `sources[0].tables[1]` in file
+`models\staging\sources.yml`. The `freshness` top-level property should be moved
+into the `config` of `sources[0].tables[1]`.
+11:11:03  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.jaffle_shop_dbt.example
+11:11:04  Found 4 seeds, 3 models, 4 sources, 545 macros
+11:11:04  
+11:11:04  Concurrency: 1 threads (target='dev')
+11:11:04  
+11:11:06  Pulling freshness from warehouse metadata tables for 0 sources
+11:11:06  1 of 1 START freshness of jaffle_shop.raw_orders ............................... [RUN]
+11:11:07  1 of 1 ERROR freshness of jaffle_shop.raw_orders ............................... [ERROR in 1.48s]
+11:11:08  
+11:11:08  Finished running 1 source in 0 hours 0 minutes and 4.02 seconds (4.02s).
+11:11:08  
+11:11:08    Database Error in source raw_orders (models\staging\sources.yml)
+  Expected a timestamp value when querying field 'last_modified' of table None but received value of type 'date' instead
+11:11:08  Done.
+11:11:08  [WARNING][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- PropertyMovedToConfigDeprecation: 2 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+
+
+DAY 2
+
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt docs generate
+13:23:30  Running with dbt=1.12.0
+13:23:37  Registered adapter: snowflake=1.12.0
+13:23:38  [WARNING][PropertyMovedToConfigDeprecation]: Deprecated functionality
+Found `freshness` as a top-level property of `sources[0].tables[1]` in file
+`models\staging\sources.yml`. The `freshness` top-level property should be moved
+into the `config` of `sources[0].tables[1]`.
+13:23:41  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 1 unused configuration paths:
+- models.jaffle_shop_dbt.example
+13:23:41  Found 4 seeds, 3 models, 4 sources, 545 macros
+13:23:41  
+13:23:41  Concurrency: 1 threads (target='dev')
+13:23:41  
+13:23:44  Building catalog
+13:23:47  Catalog written to C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt\target\catalog.json
+13:23:47  [WARNING][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- PropertyMovedToConfigDeprecation: 2 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt docs serve
+13:24:06  Running with dbt=1.12.0
+Serving docs at 8080
+To access from your browser, navigate to: http://localhost:8080
+
+
+
+Press Ctrl+C to exit.
+127.0.0.1 - - [17/Aug/2026 15:24:07] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [17/Aug/2026 15:24:07] "GET /manifest.json?cb=1786973047354 HTTP/1.1" 200 -
+127.0.0.1 - - [17/Aug/2026 15:24:07] "GET /catalog.json?cb=1786973047354 HTTP/1.1" 200 -
+127.0.0.1 - - [17/Aug/2026 15:24:07] code 404, message File not found
+127.0.0.1 - - [17/Aug/2026 15:24:07] "GET /%7B%7B%20getIcon(item.type,%20'on')%20%7D%7D HTTP/1.1" 404 -
+127.0.0.1 - - [17/Aug/2026 15:24:07] code 404, message File not found
+127.0.0.1 - - [17/Aug/2026 15:24:07] "GET /%7B%7B%20getIcon(item.type,%20'off')%20%7D%7D HTTP/1.1" 404 -
+127.0.0.1 - - [17/Aug/2026 15:24:08] code 404, message File not found
+127.0.0.1 - - [17/Aug/2026 15:24:08] "GET /$%7Brequire('./assets/favicons/favicon.ico')%7D HTTP/1.1" 404 -
+127.0.0.1 - - [18/Aug/2026 09:00:24] "GET /manifest.json?cb=1787036423947 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Aug/2026 09:00:24] "GET /catalog.json?cb=1787036423947 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Aug/2026 09:00:24] code 404, message File not found
+127.0.0.1 - - [18/Aug/2026 09:00:24] "GET /%7B%7B%20getIcon(item.type,%20'on')%20%7D%7D HTTP/1.1" 404 -
+127.0.0.1 - - [18/Aug/2026 09:00:24] code 404, message File not found
+127.0.0.1 - - [18/Aug/2026 09:00:24] "GET /%7B%7B%20getIcon(item.type,%20'off')%20%7D%7D HTTP/1.1" 404 -
+07:31:19  [ERROR]: Encountered an error:
+
+07:31:19  Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\requires.py", line 190, in wrapper
+    result, success = func(*args, **kwargs)
+                      ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\requires.py", line 136, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\requires.py", line 287, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\requires.py", line 332, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\requires.py", line 379, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\main.py", line 322, in docs_serve
+    results = task.run()
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\task\docs\serve.py", line 29, in run
+    httpd.serve_forever()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\socketserver.py", line 235, in serve_forever
+    ready = selector.select(poll_interval)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\selectors.py", line 314, in select
+    r, w, _ = self._select(self._readers, self._writers, [], timeout)
+              ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\selectors.py", line 305, in _select
+    r, w, x = select.select(r, w, w, timeout)
+              ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt run
+07:31:41  Running with dbt=1.12.0
+07:31:49  Registered adapter: snowflake=1.12.0
+07:31:50  Unable to do partial parsing because a project config has changed
+07:31:50  [WARNING][PropertyMovedToConfigDeprecation]: Deprecated functionality
+Found `freshness` as a top-level property of `sources[0].tables[1]` in file
+`models\staging\sources.yml`. The `freshness` top-level property should be moved
+into the `config` of `sources[0].tables[1]`.
+07:31:54  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 3 unused configuration paths:
+- models.jaffle_shop_dbt.staging
+- models.jaffle_shop_dbt.intermediate
+- models.jaffle_shop_dbt.marts
+07:31:54  Found 4 models, 4 seeds, 4 sources, 545 macros
+07:31:54  
+07:31:55  Concurrency: 1 threads (target='dev')
+07:31:55  
+07:31:57  1 of 4 START sql view model raw.stg_customers .................................. [RUN]
+07:31:57  1 of 4 OK created sql view model raw.stg_customers ............................. [SUCCESS 1 in 0.72s]
+07:31:57  2 of 4 START sql view model raw.stg_orders ..................................... [RUN]
+07:31:58  2 of 4 OK created sql view model raw.stg_orders ................................ [SUCCESS 1 in 0.26s]
+07:31:58  3 of 4 START sql view model raw.stg_payments ................................... [RUN]
+07:31:58  3 of 4 OK created sql view model raw.stg_payments .............................. [SUCCESS 1 in 0.29s]
+07:31:58  4 of 4 START sql view model raw.int_orders_joined .............................. [RUN]
+07:31:58  4 of 4 OK created sql view model raw.int_orders_joined ......................... [SUCCESS 1 in 0.34s]
+07:32:00  
+07:32:00  Finished running 4 view models in 0 hours 0 minutes and 5.12 seconds (5.12s).
+07:32:00  
+07:32:00  Completed successfully
+07:32:00  
+07:32:00  Done. PASS=4 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=4
+07:32:00  [WARNING][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- PropertyMovedToConfigDeprecation: 2 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+07:32:00  Done. PASS=4 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=4
+07:32:00  [WARNING][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- PropertyMovedToConfigDeprecation: 2 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt run
+07:51:33  Running with dbt=1.12.0
+07:51:33  Registered adapter: snowflake=1.12.0
+07:51:34  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 3 unused configuration paths:
+- models.jaffle_shop_dbt.intermediate
+- models.jaffle_shop_dbt.marts
+- models.jaffle_shop_dbt.staging
+07:51:34  Found 5 models, 4 seeds, 4 sources, 545 macros
+07:51:34  
+07:51:34  Concurrency: 1 threads (target='dev')
+07:51:34  
+07:51:38  1 of 5 START sql view model raw.stg_customers .................................. [RUN]
+07:51:40  1 of 5 OK created sql view model raw.stg_customers ............................. [SUCCESS 1 in 1.30s]
+07:51:40  2 of 5 START sql view model raw.stg_orders ..................................... [RUN]
+07:51:40  2 of 5 OK created sql view model raw.stg_orders ................................ [SUCCESS 1 in 0.62s]
+07:51:40  3 of 5 START sql view model raw.stg_payments ................................... [RUN]
+07:51:41  3 of 5 OK created sql view model raw.stg_payments .............................. [SUCCESS 1 in 1.16s]
+07:51:41  4 of 5 START sql view model raw.dim_customers .................................. [RUN]
+07:51:43  4 of 5 OK created sql view model raw.dim_customers ............................. [SUCCESS 1 in 1.45s]
+07:51:43  5 of 5 START sql view model raw.int_orders_joined .............................. [RUN]
+07:51:43  5 of 5 OK created sql view model raw.int_orders_joined ......................... [SUCCESS 1 in 0.44s]
+07:51:47  
+07:51:47  Finished running 5 view models in 0 hours 0 minutes and 13.38 seconds (13.38s).
+07:51:47  
+07:51:47  Completed successfully
+07:51:47  
+07:51:47  Done. PASS=5 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=5
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt run
+07:56:17  Running with dbt=1.12.0
+07:56:17  Registered adapter: snowflake=1.12.0
+07:56:18  [WARNING]: Configuration paths exist in your dbt_project.yml file which do not apply to any resources.
+There are 3 unused configuration paths:
+- models.jaffle_shop_dbt.marts
+- models.jaffle_shop_dbt.intermediate
+- models.jaffle_shop_dbt.staging
+07:56:18  Found 6 models, 4 seeds, 4 sources, 545 macros
+07:56:18  
+07:56:18  Concurrency: 1 threads (target='dev')
+07:56:18  
+07:56:20  1 of 5 START sql view model raw.stg_customers .................................. [RUN]
+07:56:22  1 of 5 OK created sql view model raw.stg_customers ............................. [SUCCESS 1 in 1.06s]
+07:56:22  2 of 5 START sql view model raw.stg_orders ..................................... [RUN]
+07:56:22  2 of 5 OK created sql view model raw.stg_orders ................................ [SUCCESS 1 in 0.21s]
+07:56:22  3 of 5 START sql view model raw.stg_payments ................................... [RUN]
+07:56:22  3 of 5 OK created sql view model raw.stg_payments .............................. [SUCCESS 1 in 0.23s]
+07:56:22  4 of 5 START sql view model raw.dim_customers .................................. [RUN]
+07:56:22  4 of 5 OK created sql view model raw.dim_customers ............................. [SUCCESS 1 in 0.31s]
+07:56:22  5 of 5 START sql view model raw.int_orders_joined .............................. [RUN]
+07:56:23  5 of 5 OK created sql view model raw.int_orders_joined ......................... [SUCCESS 1 in 0.34s]
+07:56:23  
+07:56:23  Finished running 5 view models in 0 hours 0 minutes and 5.09 seconds (5.09s).
+07:56:23  
+07:56:23  Completed successfully
+07:56:23  
+07:56:23  Done. PASS=5 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=5
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt run --full-refresh
+07:58:37  Running with dbt=1.12.0
+07:58:38  Registered adapter: snowflake=1.12.0
+07:58:38  Unable to do partial parsing because a project config has changed
+07:58:38  [WARNING][PropertyMovedToConfigDeprecation]: Deprecated functionality
+Found `freshness` as a top-level property of `sources[0].tables[1]` in file
+`models\staging\sources.yml`. The `freshness` top-level property should be moved
+into the `config` of `sources[0].tables[1]`.
+07:58:39  Found 6 models, 4 seeds, 4 sources, 545 macros
+07:58:39  
+07:58:39  Concurrency: 1 threads (target='dev')
+07:58:39  
+07:58:41  1 of 4 START sql view model raw.stg_customers .................................. [RUN]
+07:58:42  1 of 4 OK created sql view model raw.stg_customers ............................. [SUCCESS 1 in 0.88s]
+07:58:42  2 of 4 START sql view model raw.stg_orders ..................................... [RUN]
+07:58:44  2 of 4 OK created sql view model raw.stg_orders ................................ [SUCCESS 1 in 1.38s]
+07:58:44  3 of 4 START sql view model raw.stg_payments ................................... [RUN]
+07:58:44  3 of 4 OK created sql view model raw.stg_payments .............................. [SUCCESS 1 in 0.25s]
+07:58:44  4 of 4 START sql table model raw.dim_customers ................................. [RUN]
+07:58:45  4 of 4 OK created sql table model raw.dim_customers ............................ [SUCCESS 100 in 1.33s]
+07:58:45  
+07:58:45  Finished running 1 table model, 3 view models in 0 hours 0 minutes and 6.12 seconds (6.12s).
+07:58:45  
+07:58:45  Completed successfully
+07:58:45  
+07:58:45  Done. PASS=4 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=4
+07:58:45  [WARNING][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- PropertyMovedToConfigDeprecation: 2 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt run
+08:12:35  Running with dbt=1.12.0
+08:12:35  Registered adapter: snowflake=1.12.0
+08:12:36  Found 6 models, 4 seeds, 4 sources, 545 macros
+08:12:36  
+08:12:36  Concurrency: 1 threads (target='dev')
+08:12:36  
+08:12:38  1 of 5 START sql view model raw.stg_customers .................................. [RUN]
+08:12:40  1 of 5 OK created sql view model raw.stg_customers ............................. [SUCCESS 1 in 1.90s]
+08:12:40  2 of 5 START sql view model raw.stg_orders ..................................... [RUN]
+08:12:41  2 of 5 OK created sql view model raw.stg_orders ................................ [SUCCESS 1 in 0.27s]
+08:12:41  3 of 5 START sql view model raw.stg_payments ................................... [RUN]
+08:12:41  3 of 5 OK created sql view model raw.stg_payments .............................. [SUCCESS 1 in 0.31s]
+08:12:41  4 of 5 START sql table model raw.dim_customers ................................. [RUN]
+08:12:42  4 of 5 OK created sql table model raw.dim_customers ............................ [SUCCESS 100 in 1.55s]
+08:12:43  5 of 5 START sql table model raw.fct_orders .................................... [RUN]
+08:12:44  5 of 5 OK created sql table model raw.fct_orders ............................... [SUCCESS 99 in 1.53s]
+08:12:46  
+08:12:46  Finished running 2 table models, 3 view models in 0 hours 0 minutes and 9.89 seconds (9.89s).
+08:12:46  
+08:12:46  Completed successfully
+08:12:46  
+08:12:46  Done. PASS=5 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=5
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt>  dbt docs generate
+08:18:25  Running with dbt=1.12.0
+08:18:26  Registered adapter: snowflake=1.12.0
+08:18:26  Found 6 models, 4 seeds, 4 sources, 545 macros
+08:18:26  
+08:18:26  Concurrency: 1 threads (target='dev')
+08:18:26  
+08:18:28  Building catalog
+08:18:31  Catalog written to C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt\target\catalog.json
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt docs serve
+08:18:53  Running with dbt=1.12.0
+Serving docs at 8080
+To access from your browser, navigate to: http://localhost:8080
+
+
+
+Press Ctrl+C to exit.
+127.0.0.1 - - [18/Aug/2026 10:18:55] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [18/Aug/2026 10:18:55] "GET /manifest.json?cb=1787041135379 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Aug/2026 10:18:55] "GET /catalog.json?cb=1787041135379 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Aug/2026 10:18:55] code 404, message File not found
+127.0.0.1 - - [18/Aug/2026 10:18:55] "GET /%7B%7B%20getIcon(item.type,%20'on')%20%7D%7D HTTP/1.1" 404 -
+127.0.0.1 - - [18/Aug/2026 10:18:55] code 404, message File not found
+127.0.0.1 - - [18/Aug/2026 10:18:55] "GET /%7B%7B%20getIcon(item.type,%20'off')%20%7D%7D HTTP/1.1" 404 -
+11:29:52  [ERROR]: Encountered an error:
+
+11:29:52  Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\requires.py", line 190, in wrapper
+    result, success = func(*args, **kwargs)
+                      ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\requires.py", line 136, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\requires.py", line 287, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\requires.py", line 332, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\requires.py", line 379, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\main.py", line 322, in docs_serve
+    results = task.run()
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\task\docs\serve.py", line 29, in run
+    httpd.serve_forever()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\socketserver.py", line 235, in serve_forever
+    ready = selector.select(poll_interval)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\selectors.py", line 314, in select
+    r, w, _ = self._select(self._readers, self._writers, [], timeout)
+              ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\selectors.py", line 305, in _select
+    r, w, x = select.select(r, w, w, timeout)
+              ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt run
+11:30:10  Running with dbt=1.12.0
+11:30:10  Registered adapter: snowflake=1.12.0
+11:30:10  Unable to do partial parsing because a project config has changed
+11:30:10  [WARNING][PropertyMovedToConfigDeprecation]: Deprecated functionality
+Found `freshness` as a top-level property of `sources[0].tables[1]` in file
+`models\staging\sources.yml`. The `freshness` top-level property should be moved
+into the `config` of `sources[0].tables[1]`.
+11:30:12  Found 7 models, 4 seeds, 4 sources, 545 macros
+11:30:12  
+11:30:12  Concurrency: 1 threads (target='dev')
+11:30:12  
+11:30:21  1 of 6 START sql view model raw.stg_customers .................................. [RUN]
+11:30:22  1 of 6 OK created sql view model raw.stg_customers ............................. [SUCCESS 1 in 0.65s]
+11:30:22  2 of 6 START sql view model raw.stg_orders ..................................... [RUN]
+11:30:22  2 of 6 OK created sql view model raw.stg_orders ................................ [SUCCESS 1 in 0.39s]
+11:30:22  3 of 6 START sql view model raw.stg_payments ................................... [RUN]
+11:30:22  3 of 6 OK created sql view model raw.stg_payments .............................. [SUCCESS 1 in 0.27s]
+11:30:22  4 of 6 START sql table model raw.dim_customers ................................. [RUN]
+11:30:24  4 of 6 OK created sql table model raw.dim_customers ............................ [SUCCESS 100 in 1.80s]
+11:30:24  5 of 6 START sql table model raw.fct_orders .................................... [RUN]
+11:30:25  5 of 6 OK created sql table model raw.fct_orders ............................... [SUCCESS 99 in 1.30s]
+11:30:25  6 of 6 START sql table model raw.practice_jinja ................................ [RUN]
+11:30:26  6 of 6 ERROR creating sql table model raw.practice_jinja ....................... [ERROR in 0.34s]
+11:30:26  
+11:30:26  Finished running 3 table models, 3 view models in 0 hours 0 minutes and 14.67 seconds (14.67s).
+11:30:26  
+11:30:26  Completed with 1 error, 0 partial successes, and 0 warnings:
+11:30:26  
+11:30:26  [ERROR]: in model practice_jinja (models\marts\practice_jinja.sql)
+11:30:26    Database Error in model practice_jinja (models\marts\practice_jinja.sql)
+  000904 (42000): SQL compilation error: error line 31 at position 4
+  invalid identifier 'SO.STATUS'
+  compiled code at target\run\dranko_first_tests_jaffle_shop_dbt\models\marts\practice_jinja.sql
+11:30:26  
+11:30:26    compiled code at target\compiled\dranko_first_tests_jaffle_shop_dbt\models\marts\practice_jinja.sql
+11:30:26  
+11:30:26  Done. PASS=5 WARN=0 ERROR=1 SKIP=0 NO-OP=0 REUSED=0 TOTAL=6
+11:30:26  [WARNING][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- PropertyMovedToConfigDeprecation: 2 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt run
+11:33:18  Running with dbt=1.12.0
+11:33:19  Registered adapter: snowflake=1.12.0
+11:33:19  Found 7 models, 4 seeds, 4 sources, 545 macros
+11:33:19  
+11:33:19  Concurrency: 1 threads (target='dev')
+11:33:19  
+11:33:22  1 of 6 START sql view model raw.stg_customers .................................. [RUN]
+11:33:22  1 of 6 OK created sql view model raw.stg_customers ............................. [SUCCESS 1 in 0.74s]
+11:33:22  2 of 6 START sql view model raw.stg_orders ..................................... [RUN]
+11:33:23  2 of 6 OK created sql view model raw.stg_orders ................................ [SUCCESS 1 in 0.23s]
+11:33:23  3 of 6 START sql view model raw.stg_payments ................................... [RUN]
+11:33:23  3 of 6 OK created sql view model raw.stg_payments .............................. [SUCCESS 1 in 0.23s]
+11:33:23  4 of 6 START sql table model raw.dim_customers ................................. [RUN]
+11:33:24  4 of 6 OK created sql table model raw.dim_customers ............................ [SUCCESS 100 in 0.70s]
+11:33:24  5 of 6 START sql table model raw.fct_orders .................................... [RUN]
+11:33:24  5 of 6 OK created sql table model raw.fct_orders ............................... [SUCCESS 99 in 0.72s]
+11:33:24  6 of 6 START sql table model raw.practice_jinja ................................ [RUN]
+11:33:25  6 of 6 OK created sql table model raw.practice_jinja ........................... [SUCCESS 92 in 0.92s]
+11:33:26  
+11:33:26  Finished running 3 table models, 3 view models in 0 hours 0 minutes and 6.31 seconds (6.31s).
+11:33:26  
+11:33:26  Completed successfully
+11:33:26  
+11:33:26  Done. PASS=6 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=6
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt run
+11:34:32  Running with dbt=1.12.0
+11:34:33  Registered adapter: snowflake=1.12.0
+11:34:34  Found 7 models, 4 seeds, 4 sources, 545 macros
+11:34:34  
+11:34:34  Concurrency: 1 threads (target='dev')
+11:34:34  
+11:34:35  1 of 6 START sql view model raw.stg_customers .................................. [RUN]
+11:34:36  1 of 6 OK created sql view model raw.stg_customers ............................. [SUCCESS 1 in 0.72s]
+11:34:36  2 of 6 START sql view model raw.stg_orders ..................................... [RUN]
+11:34:36  2 of 6 OK created sql view model raw.stg_orders ................................ [SUCCESS 1 in 0.28s]
+11:34:36  3 of 6 START sql view model raw.stg_payments ................................... [RUN]
+11:34:37  3 of 6 OK created sql view model raw.stg_payments .............................. [SUCCESS 1 in 0.29s]
+11:34:37  4 of 6 START sql table model raw.dim_customers ................................. [RUN]
+11:34:38  4 of 6 OK created sql table model raw.dim_customers ............................ [SUCCESS 100 in 1.21s]
+11:34:38  5 of 6 START sql table model raw.fct_orders .................................... [RUN]
+11:34:39  5 of 6 OK created sql table model raw.fct_orders ............................... [SUCCESS 99 in 1.01s]
+11:34:39  6 of 6 START sql table model raw.practice_jinja ................................ [RUN]
+11:34:40  6 of 6 OK created sql table model raw.practice_jinja ........................... [SUCCESS 92 in 0.92s]
+11:34:40  
+11:34:40  Finished running 3 table models, 3 view models in 0 hours 0 minutes and 6.63 seconds (6.63s).
+11:34:40  
+11:34:40  Completed successfully
+11:34:40  
+11:34:40  Done. PASS=6 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=6
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt run
+11:35:55  Running with dbt=1.12.0
+11:35:56  Registered adapter: snowflake=1.12.0
+11:35:56  Unable to do partial parsing because a project config has changed
+11:35:56  [WARNING][PropertyMovedToConfigDeprecation]: Deprecated functionality
+Found `freshness` as a top-level property of `sources[0].tables[1]` in file
+`models\staging\sources.yml`. The `freshness` top-level property should be moved
+into the `config` of `sources[0].tables[1]`.
+11:35:57  Found 7 models, 4 seeds, 4 sources, 545 macros
+11:35:57  
+11:35:57  Concurrency: 1 threads (target='dev')
+11:35:57  
+11:35:59  1 of 6 START sql view model raw.stg_customers .................................. [RUN]
+11:36:00  1 of 6 OK created sql view model raw.stg_customers ............................. [SUCCESS 1 in 0.95s]
+11:36:00  2 of 6 START sql view model raw.stg_orders ..................................... [RUN]
+11:36:00  2 of 6 OK created sql view model raw.stg_orders ................................ [SUCCESS 1 in 0.36s]
+11:36:00  3 of 6 START sql view model raw.stg_payments ................................... [RUN]
+11:36:01  3 of 6 OK created sql view model raw.stg_payments .............................. [SUCCESS 1 in 0.31s]
+11:36:01  4 of 6 START sql table model raw.dim_customers ................................. [RUN]
+11:36:02  4 of 6 OK created sql table model raw.dim_customers ............................ [SUCCESS 100 in 0.81s]
+11:36:02  5 of 6 START sql table model raw.fct_orders .................................... [RUN]
+11:36:02  5 of 6 OK created sql table model raw.fct_orders ............................... [SUCCESS 99 in 0.91s]
+11:36:02  6 of 6 START sql table model raw.practice_jinja ................................ [RUN]
+11:36:03  6 of 6 OK created sql table model raw.practice_jinja ........................... [SUCCESS 98 in 0.81s]
+11:36:04  
+11:36:04  Finished running 3 table models, 3 view models in 0 hours 0 minutes and 6.50 seconds (6.50s).
+11:36:04  
+11:36:04  Completed successfully
+11:36:04  
+11:36:04  Done. PASS=6 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=6
+11:36:04  [WARNING][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- PropertyMovedToConfigDeprecation: 2 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt run
+11:37:59  Running with dbt=1.12.0
+11:38:00  Registered adapter: snowflake=1.12.0
+11:38:00  Unable to do partial parsing because a project config has changed
+11:38:00  [WARNING][PropertyMovedToConfigDeprecation]: Deprecated functionality
+Found `freshness` as a top-level property of `sources[0].tables[1]` in file
+`models\staging\sources.yml`. The `freshness` top-level property should be moved
+into the `config` of `sources[0].tables[1]`.
+11:38:01  Found 7 models, 4 seeds, 4 sources, 545 macros
+11:38:01  
+11:38:01  Concurrency: 1 threads (target='dev')
+11:38:01  
+11:38:03  1 of 6 START sql view model raw.stg_customers .................................. [RUN]
+11:38:04  1 of 6 OK created sql view model raw.stg_customers ............................. [SUCCESS 1 in 0.69s]
+11:38:04  2 of 6 START sql view model raw.stg_orders ..................................... [RUN]
+11:38:04  2 of 6 OK created sql view model raw.stg_orders ................................ [SUCCESS 1 in 0.28s]
+11:38:04  3 of 6 START sql view model raw.stg_payments ................................... [RUN]
+11:38:04  3 of 6 OK created sql view model raw.stg_payments .............................. [SUCCESS 1 in 0.31s]
+11:38:04  4 of 6 START sql table model raw.dim_customers ................................. [RUN]
+11:38:05  4 of 6 OK created sql table model raw.dim_customers ............................ [SUCCESS 100 in 0.77s]
+11:38:05  5 of 6 START sql table model raw.fct_orders .................................... [RUN]
+11:38:06  5 of 6 OK created sql table model raw.fct_orders ............................... [SUCCESS 99 in 0.69s]
+11:38:06  6 of 6 START sql table model raw.practice_jinja ................................ [RUN]
+11:38:06  6 of 6 OK created sql table model raw.practice_jinja ........................... [SUCCESS 92 in 0.78s]
+11:38:07  
+11:38:07  Finished running 3 table models, 3 view models in 0 hours 0 minutes and 6.25 seconds (6.25s).
+11:38:08  
+11:38:08  Completed successfully
+11:38:08  
+11:38:08  Done. PASS=6 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=6
+11:38:08  [WARNING][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- PropertyMovedToConfigDeprecation: 2 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt run
+11:54:11  Running with dbt=1.12.0
+11:54:12  Registered adapter: snowflake=1.12.0
+11:54:13  Found 7 models, 4 seeds, 4 sources, 545 macros
+11:54:13  
+11:54:13  Concurrency: 1 threads (target='dev')
+11:54:13  
+11:54:14  1 of 6 START sql view model raw.stg_customers .................................. [RUN]
+11:54:15  1 of 6 OK created sql view model raw.stg_customers ............................. [SUCCESS 1 in 0.77s]
+11:54:15  2 of 6 START sql view model raw.stg_orders ..................................... [RUN]
+11:54:15  2 of 6 OK created sql view model raw.stg_orders ................................ [SUCCESS 1 in 0.40s]
+11:54:15  3 of 6 START sql view model raw.stg_payments ................................... [RUN]
+11:54:16  3 of 6 OK created sql view model raw.stg_payments .............................. [SUCCESS 1 in 0.28s]
+11:54:16  4 of 6 START sql table model raw.dim_customers ................................. [RUN]
+11:54:18  4 of 6 OK created sql table model raw.dim_customers ............................ [SUCCESS 100 in 1.92s]
+11:54:18  5 of 6 START sql table model raw.fct_orders .................................... [RUN]
+11:54:19  5 of 6 OK created sql table model raw.fct_orders ............................... [SUCCESS 99 in 0.95s]
+11:54:19  6 of 6 START sql table model raw.practice_jinja ................................ [RUN]
+11:54:19  6 of 6 OK created sql table model raw.practice_jinja ........................... [SUCCESS 92 in 0.82s]
+11:54:20  
+11:54:20  Finished running 3 table models, 3 view models in 0 hours 0 minutes and 7.14 seconds (7.14s).
+11:54:20  
+11:54:20  Completed successfully
+11:54:20  
+11:54:20  Done. PASS=6 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=6
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt docs generate
+11:55:17  Running with dbt=1.12.0
+11:55:17  Registered adapter: snowflake=1.12.0
+11:55:18  Found 7 models, 4 seeds, 4 sources, 545 macros
+11:55:18  
+11:55:18  Concurrency: 1 threads (target='dev')
+11:55:18  
+11:55:19  Building catalog
+11:55:22  Catalog written to C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt\target\catalog.json
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt docs serve
+11:55:35  Running with dbt=1.12.0
+Serving docs at 8080
+To access from your browser, navigate to: http://localhost:8080
+
+
+
+Press Ctrl+C to exit.
+127.0.0.1 - - [18/Aug/2026 13:55:36] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [18/Aug/2026 13:55:37] "GET /manifest.json?cb=1787054137128 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Aug/2026 13:55:37] "GET /catalog.json?cb=1787054137128 HTTP/1.1" 200 -
+127.0.0.1 - - [18/Aug/2026 13:55:37] code 404, message File not found
+127.0.0.1 - - [18/Aug/2026 13:55:37] "GET /%7B%7B%20getIcon(item.type,%20'on')%20%7D%7D HTTP/1.1" 404 -
+127.0.0.1 - - [18/Aug/2026 13:55:37] code 404, message File not found
+127.0.0.1 - - [18/Aug/2026 13:55:37] "GET /%7B%7B%20getIcon(item.type,%20'off')%20%7D%7D HTTP/1.1" 404 -
+
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> git add .
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> git commit -m "Week 5 Day 2: intermediate + mart models, materializations, Jinja"
+[main ceaece9] Week 5 Day 2: intermediate + mart models, materializations, Jinja
+ 5 files changed, 50 insertions(+), 2 deletions(-)
+ create mode 100644 models/intermediate/int_orders_joined.sql
+ create mode 100644 models/marts/dim_customers.sql
+ create mode 100644 models/marts/fct_orders.sql
+ create mode 100644 models/marts/practice_jinja.sql
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> git push
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (9/9), done.
+Writing objects: 100% (10/10), 1.34 KiB | 1.34 MiB/s, done.
+Total 10 (delta 2), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/serhiy-dranko/jaffle-shop.git
+   7a71ac0..ceaece9  main -> main
+
+
+Day 3
+
+
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt test
+08:03:19  Running with dbt=1.12.0
+08:03:20  Registered adapter: snowflake=1.12.0
+08:03:21  [WARNING][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `relationships` defined on 'fct_orders' in
+package 'dranko_first_tests_jaffle_shop_dbt' (models\marts\schema.yml).
+Arguments to generic tests should be nested under the `arguments` property.
+08:03:21  Found 8 models, 4 seeds, 17 data tests, 4 sources, 545 macros
+08:03:21  
+08:03:21  Concurrency: 1 threads (target='dev')
+08:03:21  
+08:03:22  1 of 17 START test accepted_values_stg_orders_order_status__returned__completed__return_pending__shipped__placed  [RUN]
+08:03:23  1 of 17 PASS accepted_values_stg_orders_order_status__returned__completed__return_pending__shipped__placed  [PASS in 1.24s]
+08:03:23  2 of 17 START test assert_no_future_order_dates ................................ [RUN]
+08:03:23  2 of 17 PASS assert_no_future_order_dates ...................................... [PASS in 0.29s]
+08:03:23  3 of 17 START test assert_total_amount_not_negative ............................ [RUN]
+08:03:23  3 of 17 PASS assert_total_amount_not_negative .................................. [PASS in 0.19s]
+08:03:23  4 of 17 START test not_null_dim_customers_customer_id .......................... [RUN]
+08:03:24  4 of 17 PASS not_null_dim_customers_customer_id ................................ [PASS in 0.20s]
+08:03:24  5 of 17 START test not_null_fct_orders_order_id ................................ [RUN]
+08:03:24  5 of 17 PASS not_null_fct_orders_order_id ...................................... [PASS in 0.21s]
+08:03:24  6 of 17 START test not_null_stg_customers_customer_id .......................... [RUN]
+08:03:25  6 of 17 PASS not_null_stg_customers_customer_id ................................ [PASS in 0.72s]
+08:03:25  7 of 17 START test not_null_stg_orders_order_id ................................ [RUN]
+08:03:25  7 of 17 PASS not_null_stg_orders_order_id ...................................... [PASS in 0.29s]
+08:03:25  8 of 17 START test not_null_stg_payments_payment_id ............................ [RUN]
+08:03:25  8 of 17 PASS not_null_stg_payments_payment_id .................................. [PASS in 0.31s]
+08:03:25  9 of 17 START test not_null_stg_product_prices_price ........................... [RUN]
+08:03:26  9 of 17 PASS not_null_stg_product_prices_price ................................. [PASS in 0.29s]
+08:03:26  10 of 17 START test not_null_stg_product_prices_product_id ..................... [RUN]
+08:03:26  10 of 17 PASS not_null_stg_product_prices_product_id ........................... [PASS in 0.20s]
+08:03:26  11 of 17 START test relationships_fct_orders_customer_id__customer_id__ref_dim_customers_  [RUN]
+08:03:26  11 of 17 PASS relationships_fct_orders_customer_id__customer_id__ref_dim_customers_  [PASS in 0.51s]
+08:03:26  12 of 17 START test unique_dim_customers_customer_id ........................... [RUN]
+08:03:26  12 of 17 PASS unique_dim_customers_customer_id ................................. [PASS in 0.20s]
+08:03:26  13 of 17 START test unique_fct_orders_order_id ................................. [RUN]
+08:03:27  13 of 17 PASS unique_fct_orders_order_id ....................................... [PASS in 0.20s]
+08:03:27  14 of 17 START test unique_stg_customers_customer_id ........................... [RUN]
+08:03:27  14 of 17 PASS unique_stg_customers_customer_id ................................. [PASS in 0.31s]
+08:03:27  15 of 17 START test unique_stg_orders_order_id ................................. [RUN]
+08:03:27  15 of 17 PASS unique_stg_orders_order_id ....................................... [PASS in 0.19s]
+08:03:27  16 of 17 START test unique_stg_product_prices_price ............................ [RUN]
+08:03:28  16 of 17 FAIL 32 unique_stg_product_prices_price ............................... [FAIL 32 in 0.84s]
+08:03:28  17 of 17 START test unique_stg_product_prices_product_id ....................... [RUN]
+08:03:28  17 of 17 PASS unique_stg_product_prices_product_id ............................. [PASS in 0.19s]
+08:03:28  
+08:03:28  Finished running 17 data tests in 0 hours 0 minutes and 7.61 seconds (7.61s).
+08:03:28  
+08:03:28  Completed with 1 error, 0 partial successes, and 0 warnings:
+08:03:28  
+08:03:28  [ERROR]: in test unique_stg_product_prices_price (models\staging\schema.yml)
+08:03:28    Got 32 results, configured to fail if != 0
+08:03:28  
+08:03:28    compiled code at target\compiled\dranko_first_tests_jaffle_shop_dbt\models\staging\schema.yml\unique_stg_product_prices_price.sql
+08:03:28  
+08:03:28  Done. PASS=16 WARN=0 ERROR=1 SKIP=0 NO-OP=0 REUSED=0 TOTAL=17
+08:03:28  [WARNING][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 2 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt test
+08:06:03  Running with dbt=1.12.0
+08:06:04  Registered adapter: snowflake=1.12.0
+08:06:05  Found 8 models, 4 seeds, 16 data tests, 4 sources, 545 macros
+08:06:05  
+08:06:05  Concurrency: 1 threads (target='dev')
+08:06:05  
+08:06:06  1 of 16 START test accepted_values_stg_orders_order_status__returned__completed__return_pending__shipped__placed  [RUN]
+08:06:08  1 of 16 PASS accepted_values_stg_orders_order_status__returned__completed__return_pending__shipped__placed  [PASS in 1.65s]
+08:06:08  2 of 16 START test assert_no_future_order_dates ................................ [RUN]
+08:06:08  2 of 16 PASS assert_no_future_order_dates ...................................... [PASS in 0.08s]
+08:06:08  3 of 16 START test assert_total_amount_not_negative ............................ [RUN]
+08:06:08  3 of 16 PASS assert_total_amount_not_negative .................................. [PASS in 0.09s]
+08:06:08  4 of 16 START test not_null_dim_customers_customer_id .......................... [RUN]
+08:06:08  4 of 16 PASS not_null_dim_customers_customer_id ................................ [PASS in 0.09s]
+08:06:08  5 of 16 START test not_null_fct_orders_order_id ................................ [RUN]
+08:06:08  5 of 16 PASS not_null_fct_orders_order_id ...................................... [PASS in 0.09s]
+08:06:08  6 of 16 START test not_null_stg_customers_customer_id .......................... [RUN]
+08:06:09  6 of 16 PASS not_null_stg_customers_customer_id ................................ [PASS in 0.86s]
+08:06:09  7 of 16 START test not_null_stg_orders_order_id ................................ [RUN]
+08:06:10  7 of 16 PASS not_null_stg_orders_order_id ...................................... [PASS in 0.92s]
+08:06:10  8 of 16 START test not_null_stg_payments_payment_id ............................ [RUN]
+08:06:10  8 of 16 PASS not_null_stg_payments_payment_id .................................. [PASS in 0.19s]
+08:06:10  9 of 16 START test not_null_stg_product_prices_price ........................... [RUN]
+08:06:10  9 of 16 PASS not_null_stg_product_prices_price ................................. [PASS in 0.20s]
+08:06:10  10 of 16 START test not_null_stg_product_prices_product_id ..................... [RUN]
+08:06:10  10 of 16 PASS not_null_stg_product_prices_product_id ........................... [PASS in 0.20s]
+08:06:10  11 of 16 START test relationships_fct_orders_customer_id__customer_id__ref_dim_customers_  [RUN]
+08:06:11  11 of 16 PASS relationships_fct_orders_customer_id__customer_id__ref_dim_customers_  [PASS in 0.21s]
+08:06:11  12 of 16 START test unique_dim_customers_customer_id ........................... [RUN]
+08:06:11  12 of 16 PASS unique_dim_customers_customer_id ................................. [PASS in 0.20s]
+08:06:11  13 of 16 START test unique_fct_orders_order_id ................................. [RUN]
+08:06:11  13 of 16 PASS unique_fct_orders_order_id ....................................... [PASS in 0.10s]
+08:06:11  14 of 16 START test unique_stg_customers_customer_id ........................... [RUN]
+08:06:11  14 of 16 PASS unique_stg_customers_customer_id ................................. [PASS in 0.21s]
+08:06:11  15 of 16 START test unique_stg_orders_order_id ................................. [RUN]
+08:06:11  15 of 16 PASS unique_stg_orders_order_id ....................................... [PASS in 0.20s]
+08:06:11  16 of 16 START test unique_stg_product_prices_product_id ....................... [RUN]
+08:06:12  16 of 16 PASS unique_stg_product_prices_product_id ............................. [PASS in 0.50s]
+08:06:12  
+08:06:12  Finished running 16 data tests in 0 hours 0 minutes and 7.05 seconds (7.05s).
+08:06:12  
+08:06:12  Completed successfully
+08:06:12  
+08:06:12  Done. PASS=16 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=16
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> 
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt test
+10:15:05  Running with dbt=1.12.0
+10:15:05  Registered adapter: snowflake=1.12.0
+10:15:06  [WARNING][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `relationships` defined on 'practice_jinja' in
+package 'dranko_first_tests_jaffle_shop_dbt' (models\marts\schema.yml).
+Arguments to generic tests should be nested under the `arguments` property.
+10:15:06  Found 4 seeds, 33 data tests, 8 models, 4 sources, 545 macros
+10:15:06  
+10:15:06  Concurrency: 1 threads (target='dev')
+10:15:06  
+10:15:25  1 of 33 START test accepted_values_int_orders_joined_order_status__returned__completed__return_pending__shipped__placed  [RUN]
+10:15:26  1 of 33 PASS accepted_values_int_orders_joined_order_status__returned__completed__return_pending__shipped__placed  [PASS in 0.72s]
+10:15:26  2 of 33 START test accepted_values_practice_jinja_order_status__returned__completed__return_pending__shipped__placed  [RUN]
+10:15:26  2 of 33 PASS accepted_values_practice_jinja_order_status__returned__completed__return_pending__shipped__placed  [PASS in 0.20s]
+10:15:26  3 of 33 START test accepted_values_stg_orders_order_status__returned__completed__return_pending__shipped__placed  [RUN]
+10:15:26  3 of 33 PASS accepted_values_stg_orders_order_status__returned__completed__return_pending__shipped__placed  [PASS in 0.17s]
+10:15:26  4 of 33 START test assert_no_future_order_dates ................................ [RUN]
+10:15:26  4 of 33 PASS assert_no_future_order_dates ...................................... [PASS in 0.10s]
+10:15:26  5 of 33 START test assert_total_amount_not_negative ............................ [RUN]
+10:15:27  5 of 33 PASS assert_total_amount_not_negative .................................. [PASS in 0.21s]
+10:15:27  6 of 33 START test not_null_dim_customers_customer_id .......................... [RUN]
+10:15:27  6 of 33 PASS not_null_dim_customers_customer_id ................................ [PASS in 0.21s]
+10:15:27  7 of 33 START test not_null_fct_orders_order_date .............................. [RUN]
+10:15:27  7 of 33 PASS not_null_fct_orders_order_date .................................... [PASS in 0.20s]
+10:15:27  8 of 33 START test not_null_fct_orders_order_id ................................ [RUN]
+10:15:27  8 of 33 PASS not_null_fct_orders_order_id ...................................... [PASS in 0.11s]
+10:15:27  9 of 33 START test not_null_fct_orders_total_amount ............................ [RUN]
+10:15:27  9 of 33 PASS not_null_fct_orders_total_amount .................................. [PASS in 0.16s]
+10:15:27  10 of 33 START test not_null_int_orders_joined_order_date ...................... [RUN]
+10:15:27  10 of 33 PASS not_null_int_orders_joined_order_date ............................ [PASS in 0.11s]
+10:15:27  11 of 33 START test not_null_int_orders_joined_order_id ........................ [RUN]
+10:15:28  11 of 33 PASS not_null_int_orders_joined_order_id .............................. [PASS in 0.11s]
+10:15:28  12 of 33 START test not_null_int_orders_joined_order_status .................... [RUN]
+10:15:28  12 of 33 PASS not_null_int_orders_joined_order_status .......................... [PASS in 0.10s]
+10:15:28  13 of 33 START test not_null_int_orders_joined_total_amount .................... [RUN]
+10:15:28  13 of 33 PASS not_null_int_orders_joined_total_amount .......................... [PASS in 0.11s]
+10:15:28  14 of 33 START test not_null_practice_jinja_order_date ......................... [RUN]
+10:15:28  14 of 33 PASS not_null_practice_jinja_order_date ............................... [PASS in 0.14s]
+10:15:28  15 of 33 START test not_null_practice_jinja_order_id ........................... [RUN]
+10:15:28  15 of 33 PASS not_null_practice_jinja_order_id ................................. [PASS in 0.11s]
+10:15:28  16 of 33 START test not_null_practice_jinja_order_status ....................... [RUN]
+10:15:28  16 of 33 PASS not_null_practice_jinja_order_status ............................. [PASS in 0.13s]
+10:15:28  17 of 33 START test not_null_practice_jinja_total_amount ....................... [RUN]
+10:15:28  17 of 33 PASS not_null_practice_jinja_total_amount ............................. [PASS in 0.10s]
+10:15:28  18 of 33 START test not_null_stg_customers_customer_id ......................... [RUN]
+10:15:28  18 of 33 PASS not_null_stg_customers_customer_id ............................... [PASS in 0.13s]
+10:15:28  19 of 33 START test not_null_stg_orders_order_date ............................. [RUN]
+10:15:29  19 of 33 PASS not_null_stg_orders_order_date ................................... [PASS in 0.13s]
+10:15:29  20 of 33 START test not_null_stg_orders_order_id ............................... [RUN]
+10:15:29  20 of 33 PASS not_null_stg_orders_order_id ..................................... [PASS in 0.09s]
+10:15:29  21 of 33 START test not_null_stg_payments_payment_id ........................... [RUN]
+10:15:29  21 of 33 PASS not_null_stg_payments_payment_id ................................. [PASS in 0.09s]
+10:15:29  22 of 33 START test not_null_stg_product_prices_price .......................... [RUN]
+10:15:29  22 of 33 PASS not_null_stg_product_prices_price ................................ [PASS in 0.18s]
+10:15:29  23 of 33 START test not_null_stg_product_prices_product_id ..................... [RUN]
+10:15:29  23 of 33 PASS not_null_stg_product_prices_product_id ........................... [PASS in 0.10s]
+10:15:29  24 of 33 START test relationships_fct_orders_customer_id__customer_id__ref_dim_customers_  [RUN]
+10:15:29  24 of 33 PASS relationships_fct_orders_customer_id__customer_id__ref_dim_customers_  [PASS in 0.12s]
+10:15:29  25 of 33 START test relationships_int_orders_joined_customer_id__customer_id__ref_dim_customers_  [RUN]
+10:15:29  25 of 33 PASS relationships_int_orders_joined_customer_id__customer_id__ref_dim_customers_  [PASS in 0.11s]
+10:15:29  26 of 33 START test relationships_practice_jinja_customer_id__customer_id__ref_dim_customers_  [RUN]
+10:15:29  26 of 33 PASS relationships_practice_jinja_customer_id__customer_id__ref_dim_customers_  [PASS in 0.11s]
+10:15:29  27 of 33 START test unique_dim_customers_customer_id ........................... [RUN]
+10:15:29  27 of 33 PASS unique_dim_customers_customer_id ................................. [PASS in 0.11s]
+10:15:29  28 of 33 START test unique_fct_orders_order_id ................................. [RUN]
+10:15:30  28 of 33 PASS unique_fct_orders_order_id ....................................... [PASS in 0.09s]
+10:15:30  29 of 33 START test unique_int_orders_joined_order_id .......................... [RUN]
+10:15:30  29 of 33 PASS unique_int_orders_joined_order_id ................................ [PASS in 0.10s]
+10:15:30  30 of 33 START test unique_practice_jinja_order_id ............................. [RUN]
+10:15:30  30 of 33 PASS unique_practice_jinja_order_id ................................... [PASS in 0.09s]
+10:15:30  31 of 33 START test unique_stg_customers_customer_id ........................... [RUN]
+10:15:30  31 of 33 PASS unique_stg_customers_customer_id ................................. [PASS in 0.14s]
+10:15:30  32 of 33 START test unique_stg_orders_order_id ................................. [RUN]
+10:15:30  32 of 33 PASS unique_stg_orders_order_id ....................................... [PASS in 0.12s]
+10:15:30  33 of 33 START test unique_stg_product_prices_product_id ....................... [RUN]
+10:15:30  33 of 33 PASS unique_stg_product_prices_product_id ............................. [PASS in 0.08s]
+10:15:30  
+10:15:30  Finished running 33 data tests in 0 hours 0 minutes and 24.15 seconds (24.15s).
+10:15:30  
+10:15:30  Completed successfully
+10:15:30  
+10:15:30  Done. PASS=33 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=33
+10:15:30  [WARNING][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 4 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt docs generate
+10:16:00  Running with dbt=1.12.0
+10:16:00  Registered adapter: snowflake=1.12.0
+10:16:01  Found 4 seeds, 33 data tests, 8 models, 4 sources, 545 macros
+10:16:01  
+10:16:01  Concurrency: 1 threads (target='dev')
+10:16:01  
+10:16:10  Building catalog
+10:16:13  Catalog written to C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt\target\catalog.json
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt docs serve
+10:16:51  Running with dbt=1.12.0
+Serving docs at 8080
+To access from your browser, navigate to: http://localhost:8080
+
+
+
+Press Ctrl+C to exit.
+127.0.0.1 - - [19/Aug/2026 12:16:52] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [19/Aug/2026 12:16:52] "GET /manifest.json?cb=1787134612571 HTTP/1.1" 200 -
+127.0.0.1 - - [19/Aug/2026 12:16:52] "GET /catalog.json?cb=1787134612571 HTTP/1.1" 200 -
+127.0.0.1 - - [19/Aug/2026 12:16:52] code 404, message File not found
+127.0.0.1 - - [19/Aug/2026 12:16:52] "GET /%7B%7B%20getIcon(item.type,%20'on')%20%7D%7D HTTP/1.1" 404 -
+127.0.0.1 - - [19/Aug/2026 12:16:52] code 404, message File not found
+127.0.0.1 - - [19/Aug/2026 12:16:52] "GET /%7B%7B%20getIcon(item.type,%20'off')%20%7D%7D HTTP/1.1" 404 -
+10:25:51  [ERROR]: Encountered an error:
+
+10:25:51  Traceback (most recent call last):
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\requires.py", line 190, in wrapper
+    result, success = func(*args, **kwargs)
+                      ~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\requires.py", line 136, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\requires.py", line 287, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\requires.py", line 332, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\requires.py", line 379, in wrapper
+    return func(*args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\cli\main.py", line 322, in docs_serve
+    results = task.run()
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\site-packages\dbt\task\docs\serve.py", line 29, in run
+    httpd.serve_forever()
+    ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\socketserver.py", line 235, in serve_forever
+    ready = selector.select(poll_interval)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\selectors.py", line 314, in select
+    r, w, _ = self._select(self._readers, self._writers, [], timeout)
+              ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python313\Lib\selectors.py", line 305, in _select
+    r, w, x = select.select(r, w, w, timeout)
+              ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt snapshot
+10:30:12  Running with dbt=1.12.0
+10:30:13  Registered adapter: snowflake=1.12.0
+10:30:13  Found 4 seeds, 33 data tests, 8 models, 1 snapshot, 4 sources, 545 macros
+10:30:13  
+10:30:13  Concurrency: 1 threads (target='dev')
+10:30:13  
+10:30:15  1 of 1 START snapshot snapshots.product_prices_snapshot ........................ [RUN]
+10:30:17  [WARNING]: Data type of snapshot table timestamp columns (TIMESTAMP_NTZ) doesn't match derived column 'updated_at' (TEXT). Please update snapshot config 'updated_at'.
+10:30:17  1 of 1 OK snapshotted snapshots.product_prices_snapshot ........................ [SUCCESS 150 in 2.23s]
+10:30:18  
+10:30:18  Finished running 1 snapshot in 0 hours 0 minutes and 4.52 seconds (4.52s).
+10:30:18  
+10:30:18  Completed successfully
+10:30:18  
+10:30:18  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=1
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> 
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt run
+10:33:27  Running with dbt=1.12.0
+10:33:28  Registered adapter: snowflake=1.12.0
+10:33:29  Found 4 seeds, 33 data tests, 8 models, 1 snapshot, 4 sources, 545 macros
+10:33:29  
+10:33:29  Concurrency: 1 threads (target='dev')
+10:33:29  
+10:33:31  1 of 7 START sql view model raw.stg_customers .................................. [RUN]
+10:33:32  1 of 7 OK created sql view model raw.stg_customers ............................. [SUCCESS 1 in 1.53s]
+10:33:32  2 of 7 START sql view model raw.stg_orders ..................................... [RUN]
+10:33:33  2 of 7 OK created sql view model raw.stg_orders ................................ [SUCCESS 1 in 0.39s]
+10:33:33  3 of 7 START sql view model raw.stg_payments ................................... [RUN]
+10:33:33  3 of 7 OK created sql view model raw.stg_payments .............................. [SUCCESS 1 in 0.25s]
+10:33:33  4 of 7 START sql view model raw.stg_product_prices ............................. [RUN]
+10:33:33  4 of 7 OK created sql view model raw.stg_product_prices ........................ [SUCCESS 1 in 0.33s]
+10:33:33  5 of 7 START sql table model raw.dim_customers ................................. [RUN]
+10:33:34  5 of 7 OK created sql table model raw.dim_customers ............................ [SUCCESS 100 in 1.05s]
+10:33:34  6 of 7 START sql table model raw.fct_orders .................................... [RUN]
+10:33:36  6 of 7 OK created sql table model raw.fct_orders ............................... [SUCCESS 99 in 1.83s]
+10:33:36  7 of 7 START sql table model raw.practice_jinja ................................ [RUN]
+10:33:37  7 of 7 OK created sql table model raw.practice_jinja ........................... [SUCCESS 92 in 0.92s]
+10:33:37  
+10:33:37  Finished running 3 table models, 4 view models in 0 hours 0 minutes and 8.71 seconds (8.71s).
+10:33:37  
+10:33:37  Completed successfully
+10:33:37  
+10:33:37  Done. PASS=7 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=7
+
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt snapshot
+10:38:18  Running with dbt=1.12.0
+10:38:19  Registered adapter: snowflake=1.12.0
+10:38:19  Found 4 seeds, 33 data tests, 8 models, 1 snapshot, 4 sources, 545 macros
+10:38:19  
+10:38:19  Concurrency: 1 threads (target='dev')
+10:38:19  
+10:38:21  1 of 1 START snapshot snapshots.product_prices_snapshot ........................ [RUN]
+10:38:24  1 of 1 OK snapshotted snapshots.product_prices_snapshot ........................ [SUCCESS 0 in 2.77s]
+10:38:24  
+10:38:24  Finished running 1 snapshot in 0 hours 0 minutes and 5.01 seconds (5.01s).
+10:38:24  
+10:38:24  Completed successfully
+10:38:24  
+10:38:24  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=1
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt seed
+11:05:17  Running with dbt=1.12.0
+11:05:17  Registered adapter: snowflake=1.12.0
+11:05:18  Found 4 seeds, 33 data tests, 8 models, 1 snapshot, 4 sources, 545 macros
+11:05:18  
+11:05:18  Concurrency: 1 threads (target='dev')
+11:05:18  
+11:05:21  1 of 4 START seed file raw.raw_customers ....................................... [RUN]
+11:05:22  1 of 4 OK loaded seed file raw.raw_customers ................................... [INSERT 100 in 1.48s]
+11:05:22  2 of 4 START seed file raw.raw_orders .......................................... [RUN]
+11:05:23  2 of 4 OK loaded seed file raw.raw_orders ...................................... [INSERT 99 in 0.88s]
+11:05:23  3 of 4 START seed file raw.raw_payments ........................................ [RUN]
+11:05:24  3 of 4 OK loaded seed file raw.raw_payments .................................... [INSERT 113 in 0.82s]
+11:05:24  4 of 4 START seed file raw.raw_product_prices_v2 ............................... [RUN]
+11:05:25  4 of 4 OK loaded seed file raw.raw_product_prices_v2 ........................... [INSERT 150 in 0.96s]
+11:05:25  
+11:05:25  Finished running 4 seeds in 0 hours 0 minutes and 7.29 seconds (7.29s).
+11:05:25  
+11:05:25  Completed successfully
+11:05:25  
+11:05:25  Done. PASS=4 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=4
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt run
+11:05:33  Running with dbt=1.12.0
+11:05:33  Registered adapter: snowflake=1.12.0
+11:05:34  Found 4 seeds, 33 data tests, 8 models, 1 snapshot, 4 sources, 545 macros
+11:05:34  
+11:05:34  Concurrency: 1 threads (target='dev')
+11:05:34  
+11:05:37  1 of 7 START sql view model raw.stg_customers .................................. [RUN]
+11:05:37  1 of 7 OK created sql view model raw.stg_customers ............................. [SUCCESS 1 in 0.64s]
+11:05:37  2 of 7 START sql view model raw.stg_orders ..................................... [RUN]
+11:05:38  2 of 7 OK created sql view model raw.stg_orders ................................ [SUCCESS 1 in 0.26s]
+11:05:38  3 of 7 START sql view model raw.stg_payments ................................... [RUN]
+11:05:38  3 of 7 OK created sql view model raw.stg_payments .............................. [SUCCESS 1 in 0.21s]
+11:05:38  4 of 7 START sql view model raw.stg_product_prices ............................. [RUN]
+11:05:38  4 of 7 OK created sql view model raw.stg_product_prices ........................ [SUCCESS 1 in 0.22s]
+11:05:38  5 of 7 START sql table model raw.dim_customers ................................. [RUN]
+11:05:39  5 of 7 OK created sql table model raw.dim_customers ............................ [SUCCESS 100 in 0.83s]
+11:05:39  6 of 7 START sql table model raw.fct_orders .................................... [RUN]
+11:05:40  6 of 7 OK created sql table model raw.fct_orders ............................... [SUCCESS 99 in 0.85s]
+11:05:40  7 of 7 START sql table model raw.practice_jinja ................................ [RUN]
+11:05:41  7 of 7 OK created sql table model raw.practice_jinja ........................... [SUCCESS 92 in 1.20s]
+11:05:41  
+11:05:41  Finished running 3 table models, 4 view models in 0 hours 0 minutes and 7.26 seconds (7.26s).
+11:05:41  
+11:05:41  Completed successfully
+11:05:41  
+11:05:41  Done. PASS=7 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=7
+S C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt snapshot
+11:06:09  Running with dbt=1.12.0
+11:06:10  Registered adapter: snowflake=1.12.0
+11:06:10  Found 4 seeds, 33 data tests, 8 models, 1 snapshot, 4 sources, 545 macros
+11:06:10  
+11:06:10  Concurrency: 1 threads (target='dev')
+11:06:10  
+11:06:12  1 of 1 START snapshot snapshots.product_prices_snapshot ........................ [RUN]
+11:06:16  1 of 1 OK snapshotted snapshots.product_prices_snapshot ........................ [SUCCESS 1 in 4.64s]
+11:06:17  
+11:06:17  Finished running 1 snapshot in 0 hours 0 minutes and 6.59 seconds (6.59s).
+11:06:17  
+11:06:17  Completed successfully
+11:06:17  
+11:06:17  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=1
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> 
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> git add .
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> git commit -m "Week 5 Day 3: tests, docs, snapshot"
+[main e41ff9f] Update README with Day 3: tests, docs, snapshots
+ 5 files changed, 21 insertions(+), 4 deletions(-)
+ create mode 100644 Screenshot 2026-08-19 133023.png
+ create mode 100644 screenshots/dbt_orders_linage_graph.png
+ create mode 100644 screenshots/dbt_orders_pipeline.png
+ create mode 100644 screenshots/fct_orders_linage_graph.png
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> git push
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (7/7), 473.22 KiB | 29.58 MiB/s, done.
+Total 7 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/serhiy-dranko/jaffle-shop.git
+   a5a121d..e41ff9f  main -> main
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> 
+
+Day 4
+
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt run --select fct_orders
+07:45:03  Running with dbt=1.12.0
+07:45:09  Registered adapter: snowflake=1.12.0
+07:45:13  [WARNING][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `relationships` defined on 'fct_orders' in
+package 'dranko_first_tests_jaffle_shop_dbt' (models\marts\schema.yml).
+Arguments to generic tests should be nested under the `arguments` property.
+07:45:13  Found 4 seeds, 33 data tests, 8 models, 1 snapshot, 4 sources, 545 macros
+07:45:13  
+07:45:13  Concurrency: 1 threads (target='dev')
+07:45:13  
+07:45:17  1 of 1 START sql incremental model raw.fct_orders .............................. [RUN]
+07:45:20  1 of 1 OK created sql incremental model raw.fct_orders ......................... [SUCCESS 0 in 3.26s]
+07:45:21  
+07:45:21  Finished running 1 incremental model in 0 hours 0 minutes and 7.05 seconds (7.05s).
+07:45:21  
+07:45:21  Completed successfully
+07:45:21  
+07:45:21  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=1
+07:45:21  [WARNING][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 1 occurrence
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt seed
+07:52:47  Running with dbt=1.12.0
+07:52:48  Registered adapter: snowflake=1.12.0
+07:52:48  Found 4 seeds, 33 data tests, 8 models, 1 snapshot, 4 sources, 545 macros
+07:52:49  
+07:52:49  Concurrency: 1 threads (target='dev')
+07:52:49  
+07:52:50  1 of 4 START seed file raw.raw_customers ....................................... [RUN]
+07:52:52  1 of 4 OK loaded seed file raw.raw_customers ................................... [INSERT 100 in 1.28s]
+07:52:52  2 of 4 START seed file raw.raw_orders .......................................... [RUN]
+07:52:52  2 of 4 OK loaded seed file raw.raw_orders ...................................... [INSERT 101 in 0.74s]
+07:52:52  3 of 4 START seed file raw.raw_payments ........................................ [RUN]
+07:52:54  3 of 4 OK loaded seed file raw.raw_payments .................................... [INSERT 113 in 1.15s]
+07:52:54  4 of 4 START seed file raw.raw_product_prices_v2 ............................... [RUN]
+07:52:55  4 of 4 OK loaded seed file raw.raw_product_prices_v2 ........................... [INSERT 150 in 0.89s]
+07:52:55  
+07:52:55  Finished running 4 seeds in 0 hours 0 minutes and 6.24 seconds (6.24s).
+07:52:55  
+07:52:55  Completed successfully
+07:52:55  
+07:52:55  Done. PASS=4 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=4
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt run --select fct_orders
+07:53:25  Running with dbt=1.12.0
+07:53:26  Registered adapter: snowflake=1.12.0
+07:53:26  Found 4 seeds, 33 data tests, 8 models, 1 snapshot, 4 sources, 545 macros
+07:53:26  
+07:53:26  Concurrency: 1 threads (target='dev')
+07:53:26  
+07:53:29  1 of 1 START sql incremental model raw.fct_orders .............................. [RUN]
+07:53:31  1 of 1 OK created sql incremental model raw.fct_orders ......................... [SUCCESS 2 in 2.30s]
+07:53:31  
+07:53:31  Finished running 1 incremental model in 0 hours 0 minutes and 4.99 seconds (4.99s).
+07:53:31  
+07:53:31  Completed successfully
+07:53:31  
+07:53:31  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=1
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> 
+
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt run --full-refresh --select fct_orders
+08:13:37  Running with dbt=1.12.0
+08:13:37  Registered adapter: snowflake=1.12.0
+08:13:38  Found 4 seeds, 33 data tests, 8 models, 1 snapshot, 4 sources, 545 macros
+08:13:38  
+08:13:38  Concurrency: 1 threads (target='dev')
+08:13:38  
+08:13:40  1 of 1 START sql incremental model raw.fct_orders .............................. [RUN]
+08:13:42  1 of 1 OK created sql incremental model raw.fct_orders ......................... [SUCCESS 101 in 1.96s]
+08:13:42  
+08:13:42  Finished running 1 incremental model in 0 hours 0 minutes and 4.38 seconds (4.38s).
+08:13:42  
+08:13:42  Completed successfully
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt run --select dim_customers
+09:00:46  Running with dbt=1.12.0
+09:00:47  Registered adapter: snowflake=1.12.0
+09:00:47  [WARNING][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `relationships` defined on 'fct_orders' in
+package 'dranko_first_tests_jaffle_shop_dbt' (models\marts\schema.yml).
+Arguments to generic tests should be nested under the `arguments` property.
+09:00:47  Found 4 seeds, 33 data tests, 8 models, 1 snapshot, 4 sources, 546 macros
+09:00:47  
+09:00:47  Concurrency: 1 threads (target='dev')
+09:00:47  
+09:00:50  1 of 1 START sql table model raw.dim_customers ................................. [RUN]
+09:00:53  1 of 1 OK created sql table model raw.dim_customers ............................ [SUCCESS 100 in 3.18s]
+09:00:54  
+09:00:54  Finished running 1 table model in 0 hours 0 minutes and 6.21 seconds (6.21s).
+09:00:54  
+09:00:54  Completed successfully
+09:00:54  
+09:00:54  Done. PASS=1 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=1
+09:00:54  [WARNING][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- MissingArgumentsPropertyInGenericTestDeprecation: 5 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> 
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt deps
+09:07:46  Running with dbt=1.12.0
+09:07:48  Updating lock file in file path: C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt/package-lock.yml
+09:07:48  Installing dbt-labs/dbt_utils
+09:07:49  Installed from version 1.4.1
+09:07:49  Up to date!
+
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt build
+09:19:37  Running with dbt=1.12.0
+09:19:38  Registered adapter: snowflake=1.12.0
+09:19:38  Unable to do partial parsing because a project dependency has been added
+09:19:38  [WARNING][PropertyMovedToConfigDeprecation]: Deprecated functionality
+Found `freshness` as a top-level property of `sources[0].tables[1]` in file
+`models\staging\sources.yml`. The `freshness` top-level property should be moved
+into the `config` of `sources[0].tables[1]`.
+09:19:41  [WARNING][MissingArgumentsPropertyInGenericTestDeprecation]: Deprecated
+functionality
+Found top-level arguments to test `relationships` defined on 'int_orders_joined'
+in package 'dranko_first_tests_jaffle_shop_dbt'
+(models\intermediate\schema.yml). Arguments to generic tests should be nested
+under the `arguments` property.
+09:19:41  Found 8 models, 1 snapshot, 35 data tests, 4 seeds, 4 sources, 662 macros
+09:19:41  
+09:19:41  Concurrency: 1 threads (target='dev')
+09:19:41  
+09:19:44  1 of 47 START sql view model raw.stg_customers ................................. [RUN]
+09:19:45  1 of 47 OK created sql view model raw.stg_customers ............................ [SUCCESS 1 in 0.73s]
+09:19:45  2 of 47 START sql view model raw.stg_orders .................................... [RUN]
+09:19:45  2 of 47 OK created sql view model raw.stg_orders ............................... [SUCCESS 1 in 0.72s]
+09:19:45  3 of 47 START sql view model raw.stg_payments .................................. [RUN]
+09:19:46  3 of 47 OK created sql view model raw.stg_payments ............................. [SUCCESS 1 in 0.29s]
+09:19:46  4 of 47 START sql view model raw.stg_product_prices ............................ [RUN]
+09:19:46  4 of 47 OK created sql view model raw.stg_product_prices ....................... [SUCCESS 1 in 0.30s]
+09:19:46  5 of 47 START seed file raw.raw_customers ...................................... [RUN]
+09:19:48  5 of 47 OK loaded seed file raw.raw_customers .................................. [INSERT 100 in 2.16s]
+09:19:48  6 of 47 START seed file raw.raw_orders ......................................... [RUN]
+09:19:49  6 of 47 OK loaded seed file raw.raw_orders ..................................... [INSERT 101 in 1.01s]
+09:19:49  7 of 47 START seed file raw.raw_payments ....................................... [RUN]
+09:19:50  7 of 47 OK loaded seed file raw.raw_payments ................................... [INSERT 113 in 1.22s]
+09:19:50  8 of 47 START seed file raw.raw_product_prices_v2 .............................. [RUN]
+09:19:51  8 of 47 OK loaded seed file raw.raw_product_prices_v2 .......................... [INSERT 150 in 1.02s]
+09:19:51  9 of 47 START test not_null_stg_customers_customer_id .......................... [RUN]
+09:19:52  9 of 47 PASS not_null_stg_customers_customer_id ................................ [PASS in 0.42s]
+09:19:52  10 of 47 START test unique_stg_customers_customer_id ........................... [RUN]
+09:19:52  10 of 47 PASS unique_stg_customers_customer_id ................................. [PASS in 0.30s]
+09:19:52  11 of 47 START test accepted_values_stg_orders_order_status__returned__completed__return_pending__shipped__placed  [RUN]
+09:19:52  11 of 47 PASS accepted_values_stg_orders_order_status__returned__completed__return_pending__shipped__placed  [PASS in 0.30s]
+09:19:52  12 of 47 START test not_null_stg_orders_order_date ............................. [RUN]
+09:19:53  12 of 47 PASS not_null_stg_orders_order_date ................................... [PASS in 0.21s]
+09:19:53  13 of 47 START test not_null_stg_orders_order_id ............................... [RUN]
+09:19:53  13 of 47 PASS not_null_stg_orders_order_id ..................................... [PASS in 0.29s]
+09:19:53  14 of 47 START test unique_stg_orders_order_id ................................. [RUN]
+09:19:53  14 of 47 PASS unique_stg_orders_order_id ....................................... [PASS in 0.40s]
+09:19:53  15 of 47 START test not_null_stg_payments_payment_id ........................... [RUN]
+09:19:54  15 of 47 PASS not_null_stg_payments_payment_id ................................. [PASS in 0.29s]
+09:19:54  16 of 47 START test not_null_stg_product_prices_price .......................... [RUN]
+09:19:54  16 of 47 PASS not_null_stg_product_prices_price ................................ [PASS in 0.27s]
+09:19:54  17 of 47 START test not_null_stg_product_prices_product_id ..................... [RUN]
+09:19:54  17 of 47 PASS not_null_stg_product_prices_product_id ........................... [PASS in 0.16s]
+09:19:54  18 of 47 START test unique_stg_product_prices_product_id ....................... [RUN]
+09:19:54  18 of 47 PASS unique_stg_product_prices_product_id ............................. [PASS in 0.26s]
+09:19:54  19 of 47 START sql table model raw.dim_customers ............................... [RUN]
+09:19:55  19 of 47 OK created sql table model raw.dim_customers .......................... [SUCCESS 100 in 0.81s]
+09:19:55  20 of 47 START snapshot snapshots.product_prices_snapshot ...................... [RUN]
+09:19:57  20 of 47 OK snapshotted snapshots.product_prices_snapshot ...................... [SUCCESS 0 in 2.33s]
+09:19:57  21 of 47 START test not_null_dim_customers_customer_id ......................... [RUN]
+09:19:58  21 of 47 PASS not_null_dim_customers_customer_id ............................... [PASS in 0.21s]
+09:19:58  22 of 47 START test unique_dim_customers_customer_id ........................... [RUN]
+09:19:58  22 of 47 PASS unique_dim_customers_customer_id ................................. [PASS in 0.19s]
+09:19:58  23 of 47 START test accepted_values_int_orders_joined_order_status__returned__completed__return_pending__shipped__placed  [RUN]
+09:19:58  23 of 47 PASS accepted_values_int_orders_joined_order_status__returned__completed__return_pending__shipped__placed  [PASS in 0.18s]
+09:19:58  24 of 47 START test not_null_int_orders_joined_order_date ...................... [RUN]
+09:19:58  24 of 47 PASS not_null_int_orders_joined_order_date ............................ [PASS in 0.31s]
+09:19:58  25 of 47 START test not_null_int_orders_joined_order_id ........................ [RUN]
+09:19:59  25 of 47 PASS not_null_int_orders_joined_order_id .............................. [PASS in 0.18s]
+09:19:59  26 of 47 START test not_null_int_orders_joined_order_status .................... [RUN]
+09:19:59  26 of 47 PASS not_null_int_orders_joined_order_status .......................... [PASS in 0.10s]
+09:19:59  27 of 47 START test not_null_int_orders_joined_total_amount .................... [RUN]
+09:19:59  27 of 47 FAIL 2 not_null_int_orders_joined_total_amount ........................ [FAIL 2 in 0.17s]
+09:19:59  28 of 47 START test relationships_int_orders_joined_customer_id__customer_id__ref_dim_customers_  [RUN]
+09:19:59  28 of 47 PASS relationships_int_orders_joined_customer_id__customer_id__ref_dim_customers_  [PASS in 0.36s]
+09:19:59  29 of 47 START test unique_int_orders_joined_order_id .......................... [RUN]
+09:19:59  29 of 47 PASS unique_int_orders_joined_order_id ................................ [PASS in 0.20s]
+09:19:59  30 of 47 SKIP relation raw.fct_orders .......................................... [SKIP]
+09:19:59  31 of 47 SKIP relation raw.practice_jinja ...................................... [SKIP]
+09:19:59  32 of 47 SKIP test assert_no_future_order_dates ................................ [SKIP]
+09:19:59  33 of 47 SKIP test assert_total_amount_not_negative ............................ [SKIP]
+09:19:59  34 of 47 SKIP test dbt_utils_expression_is_true_fct_orders_total_amount___0 .... [SKIP]
+09:19:59  35 of 47 SKIP test dbt_utils_not_constant_fct_orders_total_amount .............. [SKIP]
+09:19:59  36 of 47 SKIP test not_null_fct_orders_order_date .............................. [SKIP]
+09:19:59  37 of 47 SKIP test not_null_fct_orders_order_id ................................ [SKIP]
+09:19:59  38 of 47 SKIP test not_null_fct_orders_total_amount ............................ [SKIP]
+09:19:59  39 of 47 SKIP test relationships_fct_orders_customer_id__customer_id__ref_dim_customers_  [SKIP]
+09:19:59  40 of 47 SKIP test unique_fct_orders_order_id .................................. [SKIP]
+09:19:59  41 of 47 SKIP test accepted_values_practice_jinja_order_status__returned__completed__return_pending__shipped__placed  [SKIP]
+09:19:59  42 of 47 SKIP test not_null_practice_jinja_order_date .......................... [SKIP]
+09:19:59  43 of 47 SKIP test not_null_practice_jinja_order_id ............................ [SKIP]
+09:19:59  44 of 47 SKIP test not_null_practice_jinja_order_status ........................ [SKIP]
+09:19:59  45 of 47 SKIP test not_null_practice_jinja_total_amount ........................ [SKIP]
+09:19:59  46 of 47 SKIP test relationships_practice_jinja_customer_id__customer_id__ref_dim_customers_  [SKIP]
+09:19:59  47 of 47 SKIP test unique_practice_jinja_order_id .............................. [SKIP]
+09:20:00  
+09:20:00  Finished running 1 incremental model, 4 seeds, 1 snapshot, 2 table models, 35 data tests, 4 view models in 0 hours 0 minutes and 18.75 seconds (18.75s).
+09:20:00  
+09:20:00  Completed with 1 error, 0 partial successes, and 0 warnings:
+09:20:00  
+09:20:00  [ERROR]: in test not_null_int_orders_joined_total_amount (models\intermediate\schema.yml)
+09:20:00    Got 2 results, configured to fail if != 0
+09:20:00  
+09:20:00    compiled code at target\compiled\dranko_first_tests_jaffle_shop_dbt\models\intermediate\schema.yml\not_null_int_orders_joined_total_amount.sql
+09:20:00  
+09:20:00  Done. PASS=28 WARN=0 ERROR=1 SKIP=18 NO-OP=0 REUSED=0 TOTAL=47
+09:20:00  [WARNING][DeprecationsSummary]: Deprecated functionality
+Summary of encountered deprecations:
+- PropertyMovedToConfigDeprecation: 2 occurrences
+- MissingArgumentsPropertyInGenericTestDeprecation: 7 occurrences
+To see all deprecation instances instead of just the first occurrence of each,
+run command again with the `--show-all-deprecations` flag. You may also need to
+run with `--no-partial-parse` as some deprecations are only encountered during
+parsing.
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> 
+
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt build
+10:57:46  Running with dbt=1.12.0
+10:57:46  Registered adapter: snowflake=1.12.0
+10:57:47  Found 8 models, 1 snapshot, 35 data tests, 4 seeds, 4 sources, 662 macros
+10:57:47  
+10:57:47  Concurrency: 1 threads (target='dev')
+10:57:47  
+10:57:49  1 of 47 START sql view model raw.stg_customers ................................. [RUN]
+10:57:50  1 of 47 OK created sql view model raw.stg_customers ............................ [SUCCESS 1 in 0.77s]
+10:57:50  2 of 47 START sql view model raw.stg_orders .................................... [RUN]
+10:57:50  2 of 47 OK created sql view model raw.stg_orders ............................... [SUCCESS 1 in 0.25s]
+10:57:50  3 of 47 START sql view model raw.stg_payments .................................. [RUN]
+10:57:50  3 of 47 OK created sql view model raw.stg_payments ............................. [SUCCESS 1 in 0.25s]
+10:57:50  4 of 47 START sql view model raw.stg_product_prices ............................ [RUN]
+10:57:50  4 of 47 OK created sql view model raw.stg_product_prices ....................... [SUCCESS 1 in 0.31s]
+10:57:50  5 of 47 START seed file raw.raw_customers ...................................... [RUN]
+10:57:51  5 of 47 OK loaded seed file raw.raw_customers .................................. [INSERT 100 in 1.02s]
+10:57:51  6 of 47 START seed file raw.raw_orders ......................................... [RUN]
+10:57:52  6 of 47 OK loaded seed file raw.raw_orders ..................................... [INSERT 101 in 0.99s]
+10:57:52  7 of 47 START seed file raw.raw_payments ....................................... [RUN]
+10:57:54  7 of 47 OK loaded seed file raw.raw_payments ................................... [INSERT 113 in 1.47s]
+10:57:54  8 of 47 START seed file raw.raw_product_prices_v2 .............................. [RUN]
+10:57:55  8 of 47 OK loaded seed file raw.raw_product_prices_v2 .......................... [INSERT 150 in 1.02s]
+10:57:55  9 of 47 START test not_null_stg_customers_customer_id .......................... [RUN]
+10:57:55  9 of 47 PASS not_null_stg_customers_customer_id ................................ [PASS in 0.31s]
+10:57:55  10 of 47 START test unique_stg_customers_customer_id ........................... [RUN]
+10:57:55  10 of 47 PASS unique_stg_customers_customer_id ................................. [PASS in 0.20s]
+10:57:55  11 of 47 START test accepted_values_stg_orders_order_status__returned__completed__return_pending__shipped__placed  [RUN]
+10:57:56  11 of 47 PASS accepted_values_stg_orders_order_status__returned__completed__return_pending__shipped__placed  [PASS in 0.30s]
+10:57:56  12 of 47 START test not_null_stg_orders_order_date ............................. [RUN]
+10:57:56  12 of 47 PASS not_null_stg_orders_order_date ................................... [PASS in 0.32s]
+10:57:56  13 of 47 START test not_null_stg_orders_order_id ............................... [RUN]
+10:57:56  13 of 47 PASS not_null_stg_orders_order_id ..................................... [PASS in 0.19s]
+10:57:56  14 of 47 START test unique_stg_orders_order_id ................................. [RUN]
+10:57:57  14 of 47 PASS unique_stg_orders_order_id ....................................... [PASS in 0.29s]
+10:57:57  15 of 47 START test not_null_stg_payments_payment_id ........................... [RUN]
+10:57:57  15 of 47 PASS not_null_stg_payments_payment_id ................................. [PASS in 0.21s]
+10:57:57  16 of 47 START test not_null_stg_product_prices_price .......................... [RUN]
+10:57:57  16 of 47 PASS not_null_stg_product_prices_price ................................ [PASS in 0.36s]
+10:57:57  17 of 47 START test not_null_stg_product_prices_product_id ..................... [RUN]
+10:57:58  17 of 47 PASS not_null_stg_product_prices_product_id ........................... [PASS in 0.31s]
+10:57:58  18 of 47 START test unique_stg_product_prices_product_id ....................... [RUN]
+10:57:58  18 of 47 PASS unique_stg_product_prices_product_id ............................. [PASS in 0.13s]
+10:57:58  19 of 47 START sql table model raw.dim_customers ............................... [RUN]
+10:57:58  19 of 47 OK created sql table model raw.dim_customers .......................... [SUCCESS 100 in 0.67s]
+10:57:58  20 of 47 START snapshot snapshots.product_prices_snapshot ...................... [RUN]
+10:58:02  20 of 47 OK snapshotted snapshots.product_prices_snapshot ...................... [SUCCESS 72 in 3.60s]
+10:58:02  21 of 47 START test not_null_dim_customers_customer_id ......................... [RUN]
+10:58:02  21 of 47 PASS not_null_dim_customers_customer_id ............................... [PASS in 0.30s]
+10:58:02  22 of 47 START test unique_dim_customers_customer_id ........................... [RUN]
+10:58:02  22 of 47 PASS unique_dim_customers_customer_id ................................. [PASS in 0.23s]
+10:58:02  23 of 47 START test accepted_values_int_orders_joined_order_status__returned__completed__return_pending__shipped__placed  [RUN]
+10:58:03  23 of 47 PASS accepted_values_int_orders_joined_order_status__returned__completed__return_pending__shipped__placed  [PASS in 0.26s]
+10:58:03  24 of 47 START test not_null_int_orders_joined_order_date ...................... [RUN]
+10:58:03  24 of 47 PASS not_null_int_orders_joined_order_date ............................ [PASS in 0.60s]
+10:58:03  25 of 47 START test not_null_int_orders_joined_order_id ........................ [RUN]
+10:58:04  25 of 47 PASS not_null_int_orders_joined_order_id .............................. [PASS in 0.20s]
+10:58:04  26 of 47 START test not_null_int_orders_joined_order_status .................... [RUN]
+10:58:04  26 of 47 PASS not_null_int_orders_joined_order_status .......................... [PASS in 0.13s]
+10:58:04  27 of 47 START test not_null_int_orders_joined_total_amount .................... [RUN]
+10:58:04  27 of 47 PASS not_null_int_orders_joined_total_amount .......................... [PASS in 0.46s]
+10:58:04  28 of 47 START test relationships_int_orders_joined_customer_id__customer_id__ref_dim_customers_  [RUN]
+10:58:04  28 of 47 PASS relationships_int_orders_joined_customer_id__customer_id__ref_dim_customers_  [PASS in 0.33s]
+10:58:04  29 of 47 START test unique_int_orders_joined_order_id .......................... [RUN]
+10:58:05  29 of 47 PASS unique_int_orders_joined_order_id ................................ [PASS in 0.33s]
+10:58:05  30 of 47 START sql incremental model raw.fct_orders ............................ [RUN]
+10:58:07  30 of 47 OK created sql incremental model raw.fct_orders ....................... [SUCCESS 0 in 2.34s]
+10:58:07  31 of 47 START sql table model raw.practice_jinja .............................. [RUN]
+10:58:08  31 of 47 OK created sql table model raw.practice_jinja ......................... [SUCCESS 92 in 0.81s]
+10:58:08  32 of 47 START test assert_no_future_order_dates ............................... [RUN]
+10:58:08  32 of 47 PASS assert_no_future_order_dates ..................................... [PASS in 0.21s]
+10:58:08  33 of 47 START test assert_total_amount_not_negative ........................... [RUN]
+10:58:08  33 of 47 PASS assert_total_amount_not_negative ................................. [PASS in 0.29s]
+10:58:08  34 of 47 START test dbt_utils_expression_is_true_fct_orders_total_amount___0 ... [RUN]
+10:58:09  34 of 47 PASS dbt_utils_expression_is_true_fct_orders_total_amount___0 ......... [PASS in 0.14s]
+10:58:09  35 of 47 START test dbt_utils_not_constant_fct_orders_total_amount ............. [RUN]
+10:58:09  35 of 47 PASS dbt_utils_not_constant_fct_orders_total_amount ................... [PASS in 0.18s]
+10:58:09  36 of 47 START test not_null_fct_orders_order_date ............................. [RUN]
+10:58:09  36 of 47 PASS not_null_fct_orders_order_date ................................... [PASS in 0.29s]
+10:58:09  37 of 47 START test not_null_fct_orders_order_id ............................... [RUN]
+10:58:09  37 of 47 PASS not_null_fct_orders_order_id ..................................... [PASS in 0.29s]
+10:58:09  38 of 47 START test not_null_fct_orders_total_amount ........................... [RUN]
+10:58:10  38 of 47 FAIL 2 not_null_fct_orders_total_amount ............................... [FAIL 2 in 0.21s]
+10:58:10  39 of 47 START test relationships_fct_orders_customer_id__customer_id__ref_dim_customers_  [RUN]
+10:58:10  39 of 47 PASS relationships_fct_orders_customer_id__customer_id__ref_dim_customers_  [PASS in 0.29s]
+10:58:10  40 of 47 START test unique_fct_orders_order_id ................................. [RUN]
+10:58:10  40 of 47 PASS unique_fct_orders_order_id ....................................... [PASS in 0.31s]
+10:58:10  41 of 47 START test accepted_values_practice_jinja_order_status__returned__completed__return_pending__shipped__placed  [RUN]
+10:58:10  41 of 47 PASS accepted_values_practice_jinja_order_status__returned__completed__return_pending__shipped__placed  [PASS in 0.21s]
+10:58:10  42 of 47 START test not_null_practice_jinja_order_date ......................... [RUN]
+10:58:11  42 of 47 PASS not_null_practice_jinja_order_date ............................... [PASS in 0.16s]
+10:58:11  43 of 47 START test not_null_practice_jinja_order_id ........................... [RUN]
+10:58:11  43 of 47 PASS not_null_practice_jinja_order_id ................................. [PASS in 0.16s]
+10:58:11  44 of 47 START test not_null_practice_jinja_order_status ....................... [RUN]
+10:58:11  44 of 47 PASS not_null_practice_jinja_order_status ............................. [PASS in 0.10s]
+10:58:11  45 of 47 START test not_null_practice_jinja_total_amount ....................... [RUN]
+10:58:11  45 of 47 PASS not_null_practice_jinja_total_amount ............................. [PASS in 0.10s]
+10:58:11  46 of 47 START test relationships_practice_jinja_customer_id__customer_id__ref_dim_customers_  [RUN]
+10:58:11  46 of 47 PASS relationships_practice_jinja_customer_id__customer_id__ref_dim_customers_  [PASS in 0.16s]
+10:58:11  47 of 47 START test unique_practice_jinja_order_id ............................. [RUN]
+10:58:11  47 of 47 PASS unique_practice_jinja_order_id ................................... [PASS in 0.13s]
+10:58:12  
+10:58:12  Finished running 1 incremental model, 4 seeds, 1 snapshot, 2 table models, 35 data tests, 4 view models in 0 hours 0 minutes and 24.67 seconds (24.67s).
+10:58:12  
+10:58:12  Completed with 1 error, 0 partial successes, and 0 warnings:
+10:58:12  
+10:58:12  [ERROR]: in test not_null_fct_orders_total_amount (models\marts\schema.yml)
+10:58:12    Got 2 results, configured to fail if != 0
+10:58:12  
+10:58:12    compiled code at target\compiled\dranko_first_tests_jaffle_shop_dbt\models\marts\schema.yml\not_null_fct_orders_total_amount.sql
+10:58:12  
+10:58:12  Done. PASS=46 WARN=0 ERROR=1 SKIP=0 NO-OP=0 REUSED=0 TOTAL=47
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> 
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt run --full-refresh
+11:02:27  Running with dbt=1.12.0
+11:02:28  Registered adapter: snowflake=1.12.0
+11:02:28  Found 8 models, 1 snapshot, 35 data tests, 4 seeds, 4 sources, 662 macros
+11:02:28  
+11:02:28  Concurrency: 1 threads (target='dev')
+11:02:28  
+11:02:31  1 of 7 START sql view model raw.stg_customers .................................. [RUN]
+11:02:31  1 of 7 OK created sql view model raw.stg_customers ............................. [SUCCESS 1 in 0.69s]
+11:02:31  2 of 7 START sql view model raw.stg_orders ..................................... [RUN]
+11:02:32  2 of 7 OK created sql view model raw.stg_orders ................................ [SUCCESS 1 in 0.28s]
+11:02:32  3 of 7 START sql view model raw.stg_payments ................................... [RUN]
+11:02:32  3 of 7 OK created sql view model raw.stg_payments .............................. [SUCCESS 1 in 0.22s]
+11:02:32  4 of 7 START sql view model raw.stg_product_prices ............................. [RUN]
+11:02:32  4 of 7 OK created sql view model raw.stg_product_prices ........................ [SUCCESS 1 in 0.25s]
+11:02:32  5 of 7 START sql table model raw.dim_customers ................................. [RUN]
+11:02:33  5 of 7 OK created sql table model raw.dim_customers ............................ [SUCCESS 100 in 0.71s]
+11:02:33  6 of 7 START sql incremental model raw.fct_orders .............................. [RUN]
+11:02:34  6 of 7 OK created sql incremental model raw.fct_orders ......................... [SUCCESS 101 in 1.05s]
+11:02:34  7 of 7 START sql table model raw.practice_jinja ................................ [RUN]
+11:02:35  7 of 7 OK created sql table model raw.practice_jinja ........................... [SUCCESS 92 in 0.82s]
+11:02:36  
+11:02:36  Finished running 1 incremental model, 2 table models, 4 view models in 0 hours 0 minutes and 7.10 seconds (7.10s).
+11:02:36  
+11:02:36  Completed successfully
+11:02:36  
+11:02:36  Done. PASS=7 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=7
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> dbt build
+11:17:56  Running with dbt=1.12.0
+11:17:57  Registered adapter: snowflake=1.12.0
+11:17:57  Found 8 models, 1 snapshot, 35 data tests, 4 seeds, 4 sources, 662 macros
+11:17:57  
+11:17:57  Concurrency: 1 threads (target='dev')
+11:17:57  
+11:17:59  1 of 47 START sql view model raw.stg_customers ................................. [RUN]
+11:18:00  1 of 47 OK created sql view model raw.stg_customers ............................ [SUCCESS 1 in 0.56s]
+11:18:00  2 of 47 START sql view model raw.stg_orders .................................... [RUN]
+11:18:00  2 of 47 OK created sql view model raw.stg_orders ............................... [SUCCESS 1 in 0.20s]
+11:18:00  3 of 47 START sql view model raw.stg_payments .................................. [RUN]
+11:18:01  3 of 47 OK created sql view model raw.stg_payments ............................. [SUCCESS 1 in 0.61s]
+11:18:01  4 of 47 START sql view model raw.stg_product_prices ............................ [RUN]
+11:18:01  4 of 47 OK created sql view model raw.stg_product_prices ....................... [SUCCESS 1 in 0.59s]
+11:18:01  5 of 47 START seed file raw.raw_customers ...................................... [RUN]
+11:18:03  5 of 47 OK loaded seed file raw.raw_customers .................................. [INSERT 100 in 1.48s]
+11:18:03  6 of 47 START seed file raw.raw_orders ......................................... [RUN]
+11:18:05  6 of 47 OK loaded seed file raw.raw_orders ..................................... [INSERT 101 in 2.03s]
+11:18:05  7 of 47 START seed file raw.raw_payments ....................................... [RUN]
+11:18:06  7 of 47 OK loaded seed file raw.raw_payments ................................... [INSERT 113 in 1.02s]
+11:18:06  8 of 47 START seed file raw.raw_product_prices_v2 .............................. [RUN]
+11:18:07  8 of 47 OK loaded seed file raw.raw_product_prices_v2 .......................... [INSERT 150 in 1.02s]
+11:18:07  9 of 47 START test not_null_stg_customers_customer_id .......................... [RUN]
+11:18:07  9 of 47 PASS not_null_stg_customers_customer_id ................................ [PASS in 0.31s]
+11:18:07  10 of 47 START test unique_stg_customers_customer_id ........................... [RUN]
+11:18:07  10 of 47 PASS unique_stg_customers_customer_id ................................. [PASS in 0.30s]
+11:18:07  11 of 47 START test accepted_values_stg_orders_order_status__returned__completed__return_pending__shipped__placed  [RUN]
+11:18:08  11 of 47 PASS accepted_values_stg_orders_order_status__returned__completed__return_pending__shipped__placed  [PASS in 0.63s]
+11:18:08  12 of 47 START test not_null_stg_orders_order_date ............................. [RUN]
+11:18:08  12 of 47 PASS not_null_stg_orders_order_date ................................... [PASS in 0.19s]
+11:18:08  13 of 47 START test not_null_stg_orders_order_id ............................... [RUN]
+11:18:08  13 of 47 PASS not_null_stg_orders_order_id ..................................... [PASS in 0.18s]
+11:18:08  14 of 47 START test unique_stg_orders_order_id ................................. [RUN]
+11:18:09  14 of 47 PASS unique_stg_orders_order_id ....................................... [PASS in 0.33s]
+11:18:09  15 of 47 START test not_null_stg_payments_payment_id ........................... [RUN]
+11:18:09  15 of 47 PASS not_null_stg_payments_payment_id ................................. [PASS in 0.28s]
+11:18:09  16 of 47 START test not_null_stg_product_prices_price .......................... [RUN]
+11:18:09  16 of 47 PASS not_null_stg_product_prices_price ................................ [PASS in 0.31s]
+11:18:09  17 of 47 START test not_null_stg_product_prices_product_id ..................... [RUN]
+11:18:10  17 of 47 PASS not_null_stg_product_prices_product_id ........................... [PASS in 0.20s]
+11:18:10  18 of 47 START test unique_stg_product_prices_product_id ....................... [RUN]
+11:18:10  18 of 47 PASS unique_stg_product_prices_product_id ............................. [PASS in 0.21s]
+11:18:10  19 of 47 START sql table model raw.dim_customers ............................... [RUN]
+11:18:11  19 of 47 OK created sql table model raw.dim_customers .......................... [SUCCESS 100 in 1.11s]
+11:18:11  20 of 47 START snapshot snapshots.product_prices_snapshot ...................... [RUN]
+11:18:15  20 of 47 OK snapshotted snapshots.product_prices_snapshot ...................... [SUCCESS 0 in 3.67s]
+11:18:15  21 of 47 START test not_null_dim_customers_customer_id ......................... [RUN]
+11:18:15  21 of 47 PASS not_null_dim_customers_customer_id ............................... [PASS in 0.18s]
+11:18:15  22 of 47 START test unique_dim_customers_customer_id ........................... [RUN]
+11:18:15  22 of 47 PASS unique_dim_customers_customer_id ................................. [PASS in 0.11s]
+11:18:15  23 of 47 START test accepted_values_int_orders_joined_order_status__returned__completed__return_pending__shipped__placed  [RUN]
+11:18:15  23 of 47 PASS accepted_values_int_orders_joined_order_status__returned__completed__return_pending__shipped__placed  [PASS in 0.31s]
+11:18:15  24 of 47 START test not_null_int_orders_joined_order_date ...................... [RUN]
+11:18:15  24 of 47 PASS not_null_int_orders_joined_order_date ............................ [PASS in 0.12s]
+11:18:15  25 of 47 START test not_null_int_orders_joined_order_id ........................ [RUN]
+11:18:15  25 of 47 PASS not_null_int_orders_joined_order_id .............................. [PASS in 0.11s]
+11:18:15  26 of 47 START test not_null_int_orders_joined_order_status .................... [RUN]
+11:18:16  26 of 47 PASS not_null_int_orders_joined_order_status .......................... [PASS in 0.15s]
+11:18:16  27 of 47 START test not_null_int_orders_joined_total_amount .................... [RUN]
+11:18:16  27 of 47 PASS not_null_int_orders_joined_total_amount .......................... [PASS in 0.18s]
+11:18:16  28 of 47 START test relationships_int_orders_joined_customer_id__customer_id__ref_dim_customers_  [RUN]
+11:18:16  28 of 47 PASS relationships_int_orders_joined_customer_id__customer_id__ref_dim_customers_  [PASS in 0.36s]
+11:18:16  29 of 47 START test unique_int_orders_joined_order_id .......................... [RUN]
+11:18:16  29 of 47 PASS unique_int_orders_joined_order_id ................................ [PASS in 0.22s]
+11:18:16  30 of 47 START sql incremental model raw.fct_orders ............................ [RUN]
+11:18:18  30 of 47 OK created sql incremental model raw.fct_orders ....................... [SUCCESS 0 in 1.55s]
+11:18:18  31 of 47 START sql table model raw.practice_jinja .............................. [RUN]
+11:18:19  31 of 47 OK created sql table model raw.practice_jinja ......................... [SUCCESS 92 in 0.77s]
+11:18:19  32 of 47 START test assert_no_future_order_dates ............................... [RUN]
+11:18:19  32 of 47 PASS assert_no_future_order_dates ..................................... [PASS in 0.53s]
+11:18:19  33 of 47 START test assert_total_amount_not_negative ........................... [RUN]
+11:18:19  33 of 47 PASS assert_total_amount_not_negative ................................. [PASS in 0.15s]
+11:18:19  34 of 47 START test dbt_utils_expression_is_true_fct_orders_total_amount___0 ... [RUN]
+11:18:20  34 of 47 PASS dbt_utils_expression_is_true_fct_orders_total_amount___0 ......... [PASS in 0.11s]
+11:18:20  35 of 47 START test dbt_utils_not_constant_fct_orders_total_amount ............. [RUN]
+11:18:20  35 of 47 PASS dbt_utils_not_constant_fct_orders_total_amount ................... [PASS in 0.11s]
+11:18:20  36 of 47 START test not_null_fct_orders_order_date ............................. [RUN]
+11:18:20  36 of 47 PASS not_null_fct_orders_order_date ................................... [PASS in 0.11s]
+11:18:20  37 of 47 START test not_null_fct_orders_order_id ............................... [RUN]
+11:18:20  37 of 47 PASS not_null_fct_orders_order_id ..................................... [PASS in 0.17s]
+11:18:20  38 of 47 START test not_null_fct_orders_total_amount ........................... [RUN]
+11:18:20  38 of 47 PASS not_null_fct_orders_total_amount ................................. [PASS in 0.13s]
+11:18:20  39 of 47 START test relationships_fct_orders_customer_id__customer_id__ref_dim_customers_  [RUN]
+11:18:20  39 of 47 PASS relationships_fct_orders_customer_id__customer_id__ref_dim_customers_  [PASS in 0.16s]
+11:18:20  40 of 47 START test unique_fct_orders_order_id ................................. [RUN]
+11:18:20  40 of 47 PASS unique_fct_orders_order_id ....................................... [PASS in 0.11s]
+11:18:20  41 of 47 START test accepted_values_practice_jinja_order_status__returned__completed__return_pending__shipped__placed  [RUN]
+11:18:20  41 of 47 PASS accepted_values_practice_jinja_order_status__returned__completed__return_pending__shipped__placed  [PASS in 0.17s]
+11:18:20  42 of 47 START test not_null_practice_jinja_order_date ......................... [RUN]
+11:18:21  42 of 47 PASS not_null_practice_jinja_order_date ............................... [PASS in 0.59s]
+11:18:21  43 of 47 START test not_null_practice_jinja_order_id ........................... [RUN]
+11:18:21  43 of 47 PASS not_null_practice_jinja_order_id ................................. [PASS in 0.14s]
+11:18:21  44 of 47 START test not_null_practice_jinja_order_status ....................... [RUN]
+11:18:21  44 of 47 PASS not_null_practice_jinja_order_status ............................. [PASS in 0.10s]
+11:18:21  45 of 47 START test not_null_practice_jinja_total_amount ....................... [RUN]
+11:18:21  45 of 47 PASS not_null_practice_jinja_total_amount ............................. [PASS in 0.13s]
+11:18:21  46 of 47 START test relationships_practice_jinja_customer_id__customer_id__ref_dim_customers_  [RUN]
+11:18:22  46 of 47 PASS relationships_practice_jinja_customer_id__customer_id__ref_dim_customers_  [PASS in 0.17s]
+11:18:22  47 of 47 START test unique_practice_jinja_order_id ............................. [RUN]
+11:18:22  47 of 47 PASS unique_practice_jinja_order_id ................................... [PASS in 0.10s]
+11:18:22  
+11:18:22  Finished running 1 incremental model, 4 seeds, 1 snapshot, 2 table models, 35 data tests, 4 view models in 0 hours 0 minutes and 24.79 seconds (24.79s).
+11:18:22  
+11:18:22  Completed successfully
+11:18:22  
+11:18:22  Done. PASS=47 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=47
+PS C:\Users\User\Documents\Dataskools\jaffle-shop\jaffle_shop_dbt> 
