@@ -17,6 +17,10 @@ models:
   - name: fct_orders
     description: "One row per order, with total payment amount and customer link."
     columns:
+      - name: surrogate_key
+        description: "A unique identifier for each order."
+        tests:
+          - not_null
       - name: order_id
         description: "Primary key. Unique identifier for an order."
         tests:
@@ -26,8 +30,9 @@ models:
         description: "Foreign key. Links to the customer who placed the order."
         tests:
           - relationships:
-              to: ref('dim_customers')
-              field: customer_id
+              arguments:
+                to: ref('dim_customers')
+                field: customer_id
       - name: order_date
         description: "The date the order was placed."
         tests:
@@ -52,8 +57,9 @@ models:
         description: "Foreign key. Links to the customer who placed the order."
         tests:
           - relationships:
-              to: ref('dim_customers')
-              field: customer_id
+              arguments:
+                to: ref('dim_customers')
+                field: customer_id
       - name: order_date
         description: "The date the order was placed."
         tests:
@@ -68,3 +74,27 @@ models:
         description: "Total payment amount for the order."
         tests:
           - not_null
+
+  - name: price_change_history
+    description: "A model that tracks the history of price changes for products."
+    columns:
+      - name: product_id
+        description: "Primary key. Unique identifier for a product."
+        tests:
+          - not_null
+      - name: product_name
+        description: "The name of the product."
+      - name: current_price
+        description: "The current price of the product."
+        tests:
+          - not_null
+      - name: previous_price
+        description: "The previous price of the product."
+      - name: price_change_amount
+        description: "The amount by which the price has changed."
+      - name: price_change_percentage
+        description: "The percentage change in price."
+      - name: changed_at
+        description: "The date when the price change occurred."
+      - name: days_at_this_price
+        description: "The number of days the product has been at the current price."

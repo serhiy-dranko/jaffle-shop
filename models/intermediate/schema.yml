@@ -11,8 +11,9 @@ models:
         description: "Foreign key. Links to the customer who placed the order."
         tests:
           - relationships:
-              to: ref('dim_customers')
-              field: customer_id
+              arguments:
+                to: ref('dim_customers')
+                field: customer_id
       - name: order_date
         description: "The date the order was placed."
         tests:
@@ -27,3 +28,23 @@ models:
         description: "Joined Total payment amount for the order."
         tests:
           - not_null
+
+  - name: int_price_changes
+    description: "Adds previous price per product via lag(), based on snapshot history."
+    columns:
+      - name: product_id
+        description: "Primary key. Unique identifier for a product."
+        tests:
+         - not_null
+      - name: product_name
+        description: "The name of the product."
+      - name: current_price
+        description: "The price of the product."
+        tests:
+          - not_null
+      - name: previous_price
+        description: "The previous price of the product."
+      - name: dbt_valid_from
+        description: "The date from which the product price is valid."
+      - name: dbt_valid_to
+        description: "The date until which the product price is valid."

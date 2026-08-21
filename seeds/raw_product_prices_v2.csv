@@ -2,7 +2,7 @@ product_id,product_name,price,valid_from
 1,Dog Training Clicker,5.99,2025-10-20 05:16:23
 2,Digital Wireless Camera,199.99,2026-04-26 00:00:30
 3,Fitness Tracker Band,29.99,2025-10-25 22:05:20
-4,Wireless Mouse,25.99,2026-05-07 11:39:13
+4,Wireless Mouse,16.99,2026-08-21 13:00:00
 5,Zesty Garlic Marinade,4.49,2026-02-08 03:39:30
 6,Dog Training Whistle,8.99,2025-12-12 12:24:23
 7,Coconut Cream,2.99,2025-09-16 21:54:23
@@ -13,12 +13,12 @@ product_id,product_name,price,valid_from
 12,Tuna Fish (canned),2.29,2026-03-05 17:19:19
 13,Pet Reflective Vest,18.99,2025-10-06 16:33:54
 14,LED Christmas Tree Lights,34.99,2026-06-30 20:19:58
-15,Maple Oatmeal,2.99,2026-06-30 05:09:16
+15,Maple Oatmeal,3.99,2026-08-21 13:00:00
 16,Maple Oatmeal,2.99,2026-03-26 18:10:37
 17,V-Neck Sweater,49.99,2026-05-28 10:09:42
 18,Smart Thermos,39.99,2026-04-25 07:46:52
 19,Peach Green Tea,3.49,2025-11-22 10:26:25
-20,Digital Kitchen Timer,14.99,2025-11-11 08:12:05
+20,Digital Kitchen Timer,17.99,2026-08-21 13:00:00
 21,Bluetooth Headphones,79.99,2025-10-03 08:57:03
 22,Magnet Travel Fridge Magnets,12.99,2025-09-09 08:31:50
 23,Handmade Leather Wallet,49.99,2025-10-13 02:16:18
@@ -54,12 +54,12 @@ product_id,product_name,price,valid_from
 53,Maple Pecan Granola,4.49,2026-05-12 15:47:41
 54,Coconut Oil,6.49,2026-03-31 05:50:58
 55,Casual Cropped Sweater,39.99,2025-09-03 20:44:49
-56,Pet Hair Remover,9.99,2026-08-07 22:47:16
+56,Pet Hair Remover,15.00,2026-08-07 22:47:16
 57,Organic Green Tea,4.29,2026-07-13 15:57:05
 58,Handmade Wooden Utensil Set,24.99,2026-01-23 11:56:53
 59,Infrared Space Heater,99.99,2025-09-11 05:38:14
 60,Ergonomic Mouse Pad with Wrist Support,14.99,2025-10-21 17:17:37
-61,Kids' Art Easel,58.99,2025-10-05 05:16:03
+61,Kids' Art Easel,48.33,2026-08-21 13:00:00
 62,Interchangeable Watch Bands,24.99,2026-01-22 12:59:16
 63,Fashionable Scarves Set,24.99,2025-12-01 01:56:48
 64,Organic Black Beans,1.29,2025-12-23 01:35:49
@@ -112,13 +112,13 @@ product_id,product_name,price,valid_from
 111,Peach Mango Smoothie,3.49,2026-07-15 08:54:16
 112,Frozen Acai Bowl,6.49,2026-07-20 20:02:01
 113,Taro Chips,3.59,2025-12-12 18:51:07
-114,Luxury Bathrobe,49.99,2025-10-01 13:05:47
+114,Luxury Bathrobe,61.00,2025-10-01 13:05:47
 115,Wildflower Honey,4.99,2025-12-08 23:17:31
 116,Floral Wrap Top,49.99,2026-07-12 23:35:13
 117,Wireless Music Receiver,19.99,2026-07-06 08:27:03
 118,Saffron Rice Mix,2.99,2026-05-18 12:00:29
 119,Waffle Maker,39.99,2026-05-03 01:38:18
-120,Pumpkin Spice Granola,4.99,2026-05-22 12:52:00
+120,Pumpkin Spice Granola,8.48,2026-05-22 12:52:00
 121,Outdoor Portable Fire Pit,149.99,2025-10-09 00:30:36
 122,Organic Spinach,2.99,2026-04-08 01:50:45
 123,Garlic and Herb Cream Cheese,3.49,2025-08-29 09:48:58
@@ -127,7 +127,7 @@ product_id,product_name,price,valid_from
 126,Instant Camera,89.99,2026-07-20 03:59:59
 127,Canvas High-Top Sneakers,49.99,2025-10-14 09:42:29
 128,Luxury Memory Foam Mattress Topper,129.99,2026-04-25 00:26:47
-129,Wireless Smart Plug,19.99,2025-10-17 03:30:27
+129,Wireless Smart Plug,15.99,2025-10-17 03:30:27
 130,Herb Seasoned Couscous,2.49,2025-09-22 09:03:42
 131,Peanut Butter Chocolate Chip Bars,4.59,2026-08-04 05:50:47
 132,Lemon Garlic Marinade,4.29,2025-11-28 16:49:28
@@ -142,10 +142,10 @@ product_id,product_name,price,valid_from
 141,Vegetable Stock,2.49,2026-03-27 03:24:08
 142,Telescope,159.99,2025-09-13 01:56:18
 143,Smartphone Stand,15.49,2026-02-07 09:13:39
-144,Spicy Avocado Salsa,4.49,2026-03-10 01:27:38
+144,Spicy Avocado Salsa,3.99,2026-03-10 01:27:38
 145,Tandoori Chicken Marinade,2.49,2025-12-09 07:40:39
 146,Tailored Blazer,99.99,2025-12-15 09:25:58
 147,Folding Table,59.99,2026-03-20 20:56:31
 148,Mediterranean Olives,6.49,2025-09-23 12:09:14
 149,Under Desk Footrest,29.99,2026-04-23 10:53:59
-150,Savory Italian Herbs,5.99,2026-08-19 15:24:49
+150,Savory Italian Herbs,6.99,2026-08-21 13:00:00

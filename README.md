@@ -4,18 +4,17 @@ A learning project that builds a full analytics pipeline on top of the classic *
  
 Raw CSVs are seeded into Snowflake, then progressively transformed through staging → intermediate → mart layers, following dbt's standard project structure.
  
----
  
 ## Tools used
  
 - **Warehouse:** Snowflake
 - **Transformation:** dbt (`dbt-snowflake` adapter, v1.12)
 - **Language:** SQL + Jinja
----
+
  
 ## Pipeline overview
 
-![dbt orders pipeline](https://github.com/serhiy-dranko/jaffle-shop/raw/main/screenshots/dbt_orders_pipeline.png)
+![dbt orders pipeline](https://github.com/serhiy-dranko/jaffle-shop/raw/main/screenshots/pipeline_detailed.png)
 
 - **staging** — standardizes column names from raw sources. Materialized as `view`.
 - **intermediate** — reusable join/aggregation logic that doesn't belong in a single mart. Materialized as `ephemeral` (inlined as a CTE, never built as a standalone object).
@@ -25,7 +24,7 @@ Every model is covered by data tests (uniqueness, not-null, referential integrit
 
 ## Lineage graph
 
-![dbt lineage graph](https://github.com/serhiy-dranko/jaffle-shop/raw/main/screenshots/dbt_orders_linage_graph.png)
+![dbt lineage graph](https://github.com/serhiy-dranko/jaffle-shop/raw/main/screenshots/dbt_linage_graph.png)
 
 ## Project structure
  
@@ -63,6 +62,10 @@ screenshots/
 ├── dbt_orders_linage_graph.png
 ├── fct_orders_linage_graph.png
 └── dbt_orders_pipeline.png
+presentation/
+├── building_dbt_pipeline_in_snowflake.pdf
+├── building_dbt_pipeline_in_snowflake.ppx
+
 
 packages.yml                   # dbt_utils dependency
 dbt_project.yml                # Main file for dbt
@@ -158,7 +161,12 @@ dbt deps
 - Converted `fct_orders` to `incremental`, verified two-run behavior (merge vs. full rebuild) and `--full-refresh`
 - Wrote a custom macro (`clean_string`) and used it across staging and mart models
 - Installed `dbt_utils`; used `generate_surrogate_key()` plus `not_constant` and `expression_is_true` generic tests
-- Ran a full `dbt build` (seeds → snapshots → models → tests) clean from an empty schema
+- Ran a full `dbt build` (seeds → snapshots → models → tests) clean from an empty schema.
+### Day 5 - Presentation day
+- Fresh clean run-through
+- Re-generate and screenshot docs/DAG
+- Finalize README
+- Create presentation
 
 ### Useful variants
  
